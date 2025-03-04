@@ -1,0 +1,178 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\usepackage{titlesec}
+% Section style (your existing \sectiontitle)
+% \titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\section}[block]{\large\bfseries}{\thesection}{1em}{}[\hrule]
+
+% Subsection style
+\titleformat{\subsection}[block]{\normalsize\bfseries}{\thesubsection}{1em}{}
+\usepackage{fancyhdr} % For headers/footers
+\usepackage{graphicx} % For logo (replace with your own)
+
+% Header setup
+\pagestyle{fancy}
+\fancyhead[L]{\includegraphics[width=5cm]{solverware-logo.png}} % Your company logo
+\fancyhead[R]{Hat Writeup - \roleName}
+\fancyfoot[C]{\thepage}
+
+% Custom commands
+\newcommand{\roleName}{} % Set this per document
+\newcommand{\setRole}[1]{\renewcommand{\roleName}{#1}}
+\newcommand{\sectiontitle}[1]{\section*{\large \textbf{#1}}}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \includegraphics[width=8cm]{solverware-logo.png}\\[1cm] % Your logo here
+  \Huge \textbf{\roleName}\\[0.5cm]
+  \Large Hat Writeup\\
+  \vspace{0.5cm}
+  \normalsize Version 1.0 -- \today
+\end{titlepage}
+
+\roleName{Digital Creator for Promotion and Marketing}
+\setRole{Digital Creator for Promotion and Marketing} % Role set here
+
+\sectiontitle{Overview}
+This role is responsible for creating, maintaining, and refining promotion and marketing materials for social media and email blasts. It also will be supportive of blog LaTeX-based documentation—specifically "hat writeups"—to ensure clarity, consistency, and professionalism across company roles. Mastery of LaTeX is key, alongside an eye for detail and a knack for reusable design.
+
+\sectiontitle{Responsibilities}
+\begin{itemize}
+  \item Develop engineering factoids as jpg or png images. Each factoid communicates a datum of interest to engineers that is presented in a consistent and aesthetic manner.
+  \item Find factoids in volume and create factoids
+  \item Maintain a database of factoids that can be easily reused
+  \item Post several times daily to multiple social media platforms
+  \item Contribute to the EquationSolver database so equations can be used by others easily in html posts, blog posts, PDF articles, etc.  
+\end{itemize}
+
+\sectiontitle{Required Skills}
+\begin{itemize}
+  \item \textbf{LaTeX Basics:} Proficient with document classes (article, report), preamble setup, and package management.
+  \item \textbf{Template Design:} Ability to define custom commands (e.g., \texttt{\textbackslash setRole}) and environments.
+  \item \textbf{Tools:} Familiarity with editors like Overleaf, TeXShop, or a local TeX distribution.
+  \item \textbf{Problem-Solving:} Debug common issues (missing packages, font errors).
+  \item \textbf{Tikz} \texttt{tikz} allows factoids of varying text length to be easily developed without having to use a tool like Photoshop or Affinity Photo
+  \item \textbf{Good writing skills}
+\end{itemize}
+
+\sectiontitle{Resources}
+\begin{itemize}
+  \item \textbf{LaTeX Wikibook:} Free online guide for syntax and tricks.
+  \item \textbf{TeX Stack Exchange:} Community Q\&A for sticky problems.
+  \item \textbf{CTAN:} Package repository—grab \texttt{fancyhdr}, \texttt{geometry}, etc.
+  \item Internal style guide (if applicable) for branding consistency.
+\end{itemize}
+
+\section*{Sources for Engineering Factoids}
+An engineering factoid is a single datum of some interest or importance to engineers. It could be a single piece of triva, a concept that is often misunderstood or even a humorous tidbit. Factoids and be found in many places. Here is a list of possible sources.
+
+\subsection*{Books}
+\begin{itemize}
+\item \textbf{"The New Science of Strong Materials" by J.E. Gordon} - Offers insights into materials science with interesting historical anecdotes.
+\item \textbf{"To Engineer Is Human: The Role of Failure in Successful Design" by Henry Petroski } - Discusses engineering through the lens of failures and learning from them.
+\item \textbf{"Structures: Or Why Things Don't Fall Down" by J.E. Gordon} - Explains structural engineering in an accessible way.
+\end{itemize}
+
+\subsection*{Websites and Blogs}
+\begin{itemize}
+\item \textbf{engineering.com} - Has a blog section with articles on various engineering topics, often highlighting myths or interesting facts...
+
+\item \textbf{How Stuff Works} - especially the engineering section, where they break down complex ideas into simple, fact-based explanations.
+
+\item \textbf{IEEE Spectrum} - regular articles on cutting-edge engineering and technology that can be distilled into factoids.
+\item \textbf{ASME (American Society of Mechanical Engineers)} - their website features articles and blogs that could be sources for factoids.
+\end{itemize}
+
+\subsection*{Academic and Professional Resources}
+\begin{itemize}
+	\item \textbf{Journals like "Nature" or "Science"} - look for engineering-related articles that might provide surprising insights or new discoveries.
+	\item \textbf{MIT OpenCourseWare} - free lecture notes and resources from MIT courses that can be a goldmine for less-known facts or principles
+	
+\end{itemize}
+
+
+\subsection*{Industry Publications}
+\begin{itemize}
+	\item  \textbf{Mechanical Engineering Magazine (ASME)} - offers a blend of deep dives and lighter, educational content
+	\item \textbf{Civil Engineering Magazine (ASCE)} - smilar approach with civil engineering facts and historical insights.
+\end{itemize}
+
+\subsection*{Social Media and Forums}
+\begin{itemize}
+	\item \textbf{Reddit} - subreddits like r/AskEngineers, r/Engineering, or even r/explainlikeimfive for simpler explanations.
+	\item \textbf{Quora} - answers by engineers can sometimes provide nuggets of interesting information or correct widespread misconceptions
+\end{itemize}
+
+
+\subsection*{Educational Platforms}
+\begin{itemize}
+\item \textbf{Khan Academy} - While more educational in nature, their engineering courses can offer factoids through their succinct explanations.
+\item \textbf{Coursera or edX} - Engineering courses often include bite-sized facts or myths debunked within lectures.
+\end{itemize}
+
+\subsection*{Museums and Educational Programs}
+\begin{itemize}
+	\item \textbf{Engineering museums or science centers} - often have exhibits or publications that highlight engineering trivia or history in an engaging manner.
+\end{itemize}
+
+\subsection*{Patents}
+\begin{itemize}
+	\item \textbf{USPTO database} - Look through patents for innovations that might not be common knowledge but are fascinating.
+\end{itemize}
+
+\subsection*{Networking}
+\begin{itemize}
+\item \textbf{Professional networks like LinkedIn} - Connect with other engineers or follow engineering companies. They sometimes share or discuss interesting engineering facts in posts or articles.
+\end{itemize}
+
+When extracting factoids from these sources, ensure to:
+\begin{itemize}
+\item Credit the source where appropriate, especially if the factoid is directly from a publication or a less-known source.
+\item Verify the information to ensure accuracy, especially with older publications or less mainstream facts.
+\item Tailor the content to your audience, ensuring it's both educational and engaging.
+\end{itemize}
+Remember, the key to successful factoids is not just sharing information but making it memorable and relevant to your audience.
+
+It is also important to keep a database of factoids as these will be recycled. People will forget about them and there will always be new users so repitition is vital. Therefore, the admin on factoids is important. 
+
+
+\sectiontitle{Tools}
+The following software tools will be used in the normal course of the post. Thus, it is essential to be familiar and expert with these:
+
+\begin{itemize}
+	\item Affinity Photo
+	\item SnagIt
+	\item SnagIt Assets
+	\item Camtasia - for videos
+	\item TexStudio
+	\item WordPress
+\end{itemize}
+It is impractical and inefficent to use a manual process to post to multiple social sites. We signed up for PaddyPost in December 2024 to automate posts to various social media sites.
+
+The login for PaddyPost is https://app.paddypost.com/login.
+
+
+\sectiontitle{Products and Statistics}
+The purpose of this post is to make the public aware of Solverware and its products and services and to create interest in these. This post puts out engineering factoids in volume on various social media including, but not limited to: Facebook, Instagram, X (Twitter), LinkedIn, Reddit forums. Therefore, one metric of the production is number of published factoids. If a single factoid is published in three different social media sites, the stat would be three for that factoid. If this was done with five different factoids in a particular day, the stat would be 15 published factoids.
+\begin{itemize}
+	\item Factoids published to Social Media
+	\item Newsletters sent out to customer base
+	\item Blog articles published
+\end{itemize}
+
+This is a test of the footnote feature. Works great!\footnote{footnote test}
+
+
+Copyright \copyright \space 2025. Solverware. All Rights Reserved.
+
+
+
+
+
+\end{document}
+
