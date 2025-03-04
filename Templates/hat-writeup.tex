@@ -1,0 +1,68 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{titlesec} % For custom section styles
+\usepackage{fancyhdr} % For headers/footers
+\usepackage{graphicx} % For logo (replace with your own)
+
+% Header setup
+\pagestyle{fancy}
+\fancyhead[L]{\includegraphics[width=2cm]{solverware-logo.png}} % Your company logo
+\fancyhead[R]{Hat Writeup - \roleName}
+\fancyfoot[C]{\thepage}
+
+% Custom commands
+\newcommand{\roleName}{} % Set this per document
+\newcommand{\setRole}[1]{\renewcommand{\roleName}{#1}}
+\newcommand{\sectiontitle}[1]{\section*{\large \textbf{#1}}}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \includegraphics[width=4cm]{logo.png}\\[1cm] % Your logo here
+  \Huge \textbf{\roleName}\\[0.5cm]
+  \Large Hat Writeup\\
+  \vspace{0.5cm}
+  \normalsize Version 1.0 -- \today
+\end{titlepage}
+
+\setRole{LaTeX Document Specialist} % Role set here
+
+\sectiontitle{Overview}
+This role is responsible for creating, maintaining, and refining LaTeX-based documentation—specifically "hat writeups"—to ensure clarity, consistency, and professionalism across company roles. Mastery of LaTeX is key, alongside an eye for detail and a knack for reusable design.
+
+\sectiontitle{Responsibilities}
+\begin{itemize}
+  \item Develop LaTeX templates for hat writeups, policy letters, and other docs.
+  \item Compile and test documents to ensure error-free output (e.g., using Overleaf or TeX Live).
+  \item Update templates based on feedback or evolving company needs.
+  \item Train team members on basic LaTeX usage (optional but handy).
+\end{itemize}
+
+\sectiontitle{Required Skills}
+\begin{itemize}
+  \item \textbf{LaTeX Basics:} Proficient with document classes (article, report), preamble setup, and package management.
+  \item \textbf{Template Design:} Ability to define custom commands (e.g., \texttt{\textbackslash setRole}) and environments.
+  \item \textbf{Tools:} Familiarity with editors like Overleaf, TeXShop, or a local TeX distribution.
+  \item \textbf{Problem-Solving:} Debug common issues (missing packages, font errors).
+  \item Nice-to-have: Experience with \texttt{tikz} for visuals or \texttt{biblatex} for references.
+\end{itemize}
+
+\sectiontitle{Resources}
+\begin{itemize}
+  \item \textbf{LaTeX Wikibook:} Free online guide for syntax and tricks.
+  \item \textbf{TeX Stack Exchange:} Community Q\&A for sticky problems.
+  \item \textbf{CTAN:} Package repository—grab \texttt{fancyhdr}, \texttt{geometry}, etc.
+  \item Internal style guide (if applicable) for branding consistency.
+\end{itemize}
+
+\sectiontitle{Key Performance Indicators}
+\begin{itemize}
+  \item Templates completed on time for new roles.
+  \item Zero compilation errors in final docs.
+  \item Positive feedback from team on usability and readability.
+\end{itemize}
+
+\end{document}
