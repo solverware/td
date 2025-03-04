@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+
+\title{The Friction Factor in Pressure Drop Calculations}
+\author{Mike Stephenson}
+\date{January 2025}
+
+\begin{document}
+	
+	\maketitle
+	Copyright \copyright \ 2025. Solverware. All Rights Reserved.
+	
+	\today
+	
+	This is a test, a {\em great, wonderful test}.
+	
+	Kayes and London is the proper text.\footnote{go to the fucking library dude!}
+	
+	\section{Introduction}
+	Back in 1993, I visited two compressor stations on natural gas pipelines in Louisiana and Mississippi. We had a project to replace several shell and tube heat exchangers which were used with gas turbines to save fuel, the so-called recuperated gas turbine cycle. These turbines drove natural gas compressors to boost the pipeline pressure to allow it to travel to the next pumping station roughly 50 miles away. The natural gas compressors were necessary to overcome the pressure losses due to friction and other factors. This article addresses frictional losses and how they are calculated and discusses an empirical factor called the "friction factor."
+	
+	\subsection{Pressure Losses}
+	Pressure losses occur for a variety of factors. Here are the primary causes:
+	\begin{enumerate}[label=(\roman*)]
+		\item Frictional Losses -  As natural gas flows through the pipeline, it encounters friction along the inner surface of the pipe. The rougher the internal surface or the smaller the diameter of the pipe, the greater the friction loss.
+		
+		Flow rate - Higher velocities of gas increase frictional losses. This is governed by the Reynolds number, which indicates whether the flow is laminar or turbulent; turbulent flow leads to higher friction losses.
+		\item Elevation Changes  - If the pipeline goes uphill, gravitational forces work against the flow, reducing pressure at the delivery point.  Conversely, downhill sections can potentially increase pressure, but this might not always compensate for other losses
+		\item Temperature Changes - As natural gas travels, especially over long distances, it might cool down, reducing its pressure due to the ideal gas law where pressure is proportional to temperature at constant volume.
+		\item Leaks
+		\item Gas Composition
+		\item Compressor Efficiency
+	\end{enumerate}
+	
+	Friction is comprised of wall friction, i.e., the friction between the gas and the inner wall of the pipeline, and viscous or shear friction which is the friction between fluid layers. For laminar flow, it is possible to calculate friction from the Navier-Stokes equations. However, most pipelines are far from laminar flow and the calculation is not straightforward. 
+	
+	
+	Friction Factor for Laminar Flow:
+	
+	\begin{equation}
+		f = \frac{64}{Re}
+		\label{eq:friction_factor_laminar}
+	\end{equation}
+	
+	
+	\begin{equation}
+		Q = \frac{-KA \Delta h}{L}
+		\label{eq:darcy_equation}
+	\end{equation}
+	
+	\begin{equation}
+		h_f = f \frac{L}{D} \frac{V^2}{2g}
+		\label{eq:darcy_weisbach}
+	\end{equation}
+	
+	
+	
+\end{document}
