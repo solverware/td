@@ -1,0 +1,49 @@
+\documentclass[letterpaper,12pt]{article}
+
+% Include the color package
+\usepackage{xcolor}
+
+% Set the default text color to green
+\definecolor{PLgreen}{RGB}{29,97,49} 
+\definecolor{PLGreenHex}{HTML}{1D6131}
+\color{PLGreenHex}
+
+% Optional: Define page margins
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr} % For custom headers
+
+\pagestyle{plain}
+\fancyhf{} % Clear default header/footer
+\fancyhead[C]{\MakeUppercase{Solverware Policy Letter of 5 March 2025}} % Centered uppercase header
+\renewcommand{\headrulewidth}{1pt} % No line under h
+
+% Custom title command for first page only
+\newcommand{\policyletter}[2]{%
+	\begin{center}
+		\vspace*{0.25\baselineskip} % Two lines of whitespace after header
+		{\large #1} \\ % Series and number (e.g., MARKETING SERIES 1)
+		\vspace{0.5\baselineskip} % Small space between lines
+		{\LARGE \textbf{#2}} % Policy name in larger, bold font
+		\vspace{\baselineskip} % Space before content
+	\end{center}
+}
+
+% Document begins
+\begin{document}
+	% Apply header only to first page
+	\thispagestyle{fancy}
+	
+	% Custom title for first page
+	\policyletter{MARKETING SERIES 1}{ADVERTISING ON GOOGLE ADWORDS}
+	
+	% Section (all text will be green)
+	\section{Introduction}
+	This document outlines our company policies. All text in this document will appear in green.
+	
+	\section{Work Hours}
+	Regular work hours are from 9:00 AM to 5:00 PM.
+	
+	\section{Vacation Policy}
+	Employees are entitled to 15 days of paid vacation per year.
+	
+\end{document}

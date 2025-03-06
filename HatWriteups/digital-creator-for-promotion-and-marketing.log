@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.26)  4 MAR 2025 15:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.26)  4 MAR 2025 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,7 +208,7 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 File: solverware-logo.png Graphic file (type png)
 <use solverware-logo.png>
-Package pdftex.def Info: solverware-logo.png  used on input line 76.
+Package pdftex.def Info: solverware-logo.png  used on input line 77.
 (pdftex.def)             Requested size: 142.26378pt x 23.68849pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -231,10 +231,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.76852pt}.
 
 [2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 135.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 135.
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
+[][]\OT1/cmr/m/n/9 https://engineeringdiscoveries.com/90-thumb-rules-for-civil-
+engineering-and-quantity-surveyors-essential-
+ []
+
+
 
 File: solverware-logo.png Graphic file (type png)
 <use solverware-logo.png>
-Package pdftex.def Info: solverware-logo.png  used on input line 155.
+Package pdftex.def Info: solverware-logo.png  used on input line 157.
 (pdftex.def)             Requested size: 142.26378pt x 23.68849pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -244,21 +261,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-15.76852pt}.
 
 [3]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 167.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 167.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 167.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 167.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 167.
-
 
 File: solverware-logo.png Graphic file (type png)
 <use solverware-logo.png>
-Package pdftex.def Info: solverware-logo.png  used on input line 176.
+Package pdftex.def Info: solverware-logo.png  used on input line 182.
 (pdftex.def)             Requested size: 142.26378pt x 23.68849pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -284,7 +290,7 @@ Here is how much of TeX's memory you used:
  25810 multiletter control sequences out of 15000+600000
  564814 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,15n,65p,659b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,15n,65p,659b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\solve\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1095.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/
 Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
@@ -294,8 +300,8 @@ c/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/P
 rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on digital-creator-for-promotion-and-marketing.pdf (5 pages, 174
-634 bytes).
+Output written on digital-creator-for-promotion-and-marketing.pdf (5 pages, 180
+080 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
