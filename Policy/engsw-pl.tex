@@ -1,0 +1,57 @@
+\documentclass[letterpaper,12pt]{article}
+
+% Include the color package
+\usepackage{xcolor}
+
+% Set the default text color to green
+\definecolor{PLgreen}{RGB}{29,97,49} 
+\definecolor{PLGreenHex}{HTML}{1D6131}
+\color{PLGreenHex}
+
+% Optional: Define page margins
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr} % For custom headers
+
+\pagestyle{plain}
+\fancyhf{} % Clear default header/footer
+\fancyhead[C]{\MakeUppercase{Solverware Policy Letter of 5 March 2025}} % Centered uppercase header
+\renewcommand{\headrulewidth}{1pt} % No line under h
+
+% Custom title command for first page only
+\newcommand{\policyletter}[2]{%
+	\begin{center}
+		\vspace*{0.25\baselineskip} % Two lines of whitespace after header
+		{\large #1} \\ % Series and number (e.g., MARKETING SERIES 1)
+		\vspace{0.5\baselineskip} % Small space between lines
+		{\LARGE \textbf{#2}} % Policy name in larger, bold font
+		\vspace{\baselineskip} % Space before content
+	\end{center}
+}
+
+% Document begins
+\begin{document}
+	% Apply header only to first page
+	\thispagestyle{fancy}
+	
+	% Custom title for first page
+	\policyletter{ENGINEERING SOFTWARE SERIES 1}{PRODUCT SPECIFICATIONS}
+	
+	% Section (all text will be green)
+	Whenever a new product is being developed, it is imperative to do adequate planning in the form of functional and technical specifications. These are two separate documents.
+	\section{Purpose}
+	The most important function of a spec is to design the program. Even if you are working on code all by yourself, and you write a spec solely for your own benefit, the act of writing the spec — describing how the program works in minute detail — will force you to actually design the program.
+	\begin{itemize} 
+	\item Reason one - you will design the program!
+	
+	\item Reason two - saves time communicating. When you write a spec, you only have to communicate how the program is supposed to work once!
+	
+	\item Reason three giant important reason to have a spec is that without a detailed spec, it’s impossible to make a schedule.
+	\end{itemize}
+	
+	\section{Work Hours}
+	Regular work hours are from 9:00 AM to 5:00 PM.
+	
+	\section{Vacation Policy}
+	Employees are entitled to 15 days of paid vacation per year.
+	
+\end{document}
