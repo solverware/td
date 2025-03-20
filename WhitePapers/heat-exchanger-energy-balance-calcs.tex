@@ -1,0 +1,92 @@
+\documentclass[twocolumn]{article}  % Use twocolumn option
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}              % Optional: for margin control
+\usepackage{enumitem}
+\geometry{a4paper, margin=1in}     % Adjust margins if needed
+
+\title{Calculating Energy Balances in Heat Exchanger Tests}
+\author{Mike Stephenson}
+\date{March 2025}                  % Optional: customize date
+
+\begin{document}
+	
+	\maketitle                         % Creates title section
+	
+	\begin{abstract}                   % Optional abstract
+		Heat Exchanger performance testing involves setting up an experimental test rig, instrumenting it to measure temperatures, pressure and mass flow rates, acquiring the data, usually at several pre-defined state points and then evaluating the thermal effectiveness and pressure losses of the heat exchanger.
+		
+		It is important to calculate energy balances as a means of checking the integrity of the data. If there are leaks, inadequate insulation or other factors, the data may be suspect. 
+	\end{abstract}
+	
+	\section{Introduction}
+	When calculating an energy balance for a heat exchanger, you are checking to see how closely the heat lost by the hot fluid is equal to the heat gained by the cold fluid. There are going to be some system losses and other factors that will result int some deviation from the ideal. 
+	
+	\begin{equation}
+		\dot{Q}_{cold} = \dot{Q}_{hot}
+		\label{eq:darcy_equation}
+	\end{equation}
+	
+	The well-known equation to calculate heat flux in a heat exchanger requires the mass flow rate, the specific heat and the temperature change. 
+	
+	\begin{equation}
+		\dot{Q}=\dot{m}  C_p  \Delta T
+	\end{equation}
+	
+	We calculate this on both the hot and cold side of the heat exchanger and compare.
+	
+	\begin{equation}
+		\dot{Q}_{cold}=\dot{m}_{c}  C_{p,c} (T_{cold,out}-T_{cold,in})  
+	\end{equation}
+	
+	\begin{equation}
+		\dot{Q}_{hot}=\dot{m}_{h}  C_{p,h} (T_{hot,out}-T_{hot,in})  
+	\end{equation}
+	
+	In an ideal heat exchanger (no losses), the heat gained by the cold fluid is the same as the heat lost by the hot fluid. mass flow rates and temperatures are measured by instrumentation. The specific heat, however, is usually a table lookup. This can get more complicated if the specific heat is a function of temperature which it often is. For these cases, we have some possible options:
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Use the specific heat at the average temperature of the fluid stream.
+		
+		\item Look up the specific heat at the inlet temperature and the outlet temperature and take the average of the specific heats
+		
+		\item Technically, the most accurate approach is to ue the enthalpy difference
+		
+		\begin{equation}
+			\dot{Q}_c=\dot{m}_c(h_{c,out}-h_{c,in})
+		\end{equation}
+	\end{enumerate}
+	
+	\section{The Enthalpy Difference Method}
+	The enthalpy accounts for the specific heat's temperature dependence automatically.  For a constant $C_p$, the equation simplified to what you often see in textbooks, i.e., $\dot{m}_cC_p\Delta T $. When specific heat has a temperature dependence, you would integrate this expression:
+	
+	\begin{equation}		
+		h_{c,out}-h_{c,in} = \int_{T_{c,in}}^{T_{c,out}}C_p(T)dT
+	\end{equation}
+	
+	Averaging $C_p$ at the inlet and outlet is essentially a shortcut to approximate this integral.
+	
+	In the majority of cases, this is usually good enough. But if your system has a fluid where the specific heat has a strong dependence on temperature, this is the way to go.
+	
+	
+	
+	
+	\section{Main Content}
+	More text here. The content will naturally split between columns.
+	The White House is ramping up its efforts to make good on President Donald Trump’s long-held promise to end the Russia-Ukraine war, with Washington, Moscow and Kyiv all expected to send officials to Saudi Arabia for meetings in the coming days.
+	
+	The meetings follow Trump’s back-to-back calls this week with Ukrainian President Volodymyr Zelensky on Wednesday and Russian President Vladimir Putin on Tuesday, during which both foreign leaders agreed to a pause on attacks on energy targets.
+	
+	The specifics of that pause, however — which falls well short of the broader, US-proposed 30-day ceasefire deal that Ukraine agreed to earlier this month — are still murky.
+	
+	“The two leaders also agreed on a partial ceasefire against energy,” according to a Trump administration readout of Trump and Zelensky’s call.
+	
+	The readout went on to say that “technical teams will meet in Saudi Arabia in the coming days.” Those meetings are designed for US and Russian officials to hammer out more specific language on the deal reached by Trump and Putin, as well as other areas of negotiation, including broadening the agreement to the Black Sea on the way to a full ceasefire. The talks won’t involve top US Cabinet-level officials, the State Department said Wednesday.
+	
+	But those next steps come amid deepening questions over what, specifically, Trump and Putin agreed to during their Tuesday conversation – and how that’s being interpreted in Ukraine, which is continuing to be bombarded by Russia.
+	
+	Zelensky said at a Wednesday evening news conference that the proposed pause in attacks on Ukrainian and Russian targets would “most likely” apply to “energy facilities” – but that “civilian infrastructure” was also being talked about.
+	
+	
+	
+	
+\end{document}
