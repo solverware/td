@@ -15,11 +15,11 @@
 	\begin{abstract}                   % Optional abstract
 		Heat Exchanger performance testing involves setting up an experimental test rig, instrumenting it to measure temperatures, pressure and mass flow rates, acquiring the data, usually at several pre-defined state points and then evaluating the thermal effectiveness and pressure losses of the heat exchanger.
 		
-		It is important to calculate energy balances as a means of checking the integrity of the data. If there are leaks, inadequate insulation or other factors, the data may be suspect. 
+		It is important to calculate energy balances as a means of checking the integrity of the data. If there are leaks, inadequate insulation or other factors, the data may be suspect. An energy balance can help spot these factors.
 	\end{abstract}
 	
 	\section{Introduction}
-	When calculating an energy balance for a heat exchanger, you are checking to see how closely the heat lost by the hot fluid is equal to the heat gained by the cold fluid. There are going to be some system losses and other factors that will result int some deviation from the ideal. 
+	When calculating an energy balance for a heat exchanger, you are checking to see how closely the heat lost by the hot fluid is equal to the heat gained by the cold fluid. There will be some system losses and other factors that will result in some deviation from the ideal. 
 	
 	\begin{equation}
 		\dot{Q}_{cold} = \dot{Q}_{hot}
@@ -42,14 +42,14 @@
 		\dot{Q}_{hot}=\dot{m}_{h}  C_{p,h} (T_{hot,out}-T_{hot,in})  
 	\end{equation}
 	
-	In an ideal heat exchanger (no losses), the heat gained by the cold fluid is the same as the heat lost by the hot fluid. mass flow rates and temperatures are measured by instrumentation. The specific heat, however, is usually a table lookup. This can get more complicated if the specific heat is a function of temperature which it often is. For these cases, we have some possible options:
+	In an ideal heat exchanger (no losses), the heat gained by the cold fluid is the same as heat lost by the hot fluid. Mass flow rates and temperatures are measured by instrumentation. The specific heat, however, is usually a table lookup. This can get more complicated if the specific heat is a function of temperature which it often is. For these cases, we have some possible options:
 	
 	\begin{enumerate}[label=(\roman*)]
 		\item Use the specific heat at the average temperature of the fluid stream.
 		
-		\item Look up the specific heat at the inlet temperature and the outlet temperature and take the average of the specific heats
+		\item Look up the specific heat at both inlet and outlet temperatures and take the average
 		
-		\item Technically, the most accurate approach is to ue the enthalpy difference
+		\item Technically, the most accurate approach is to use the enthalpy difference
 		
 		\begin{equation}
 			\dot{Q}_c=\dot{m}_c(h_{c,out}-h_{c,in})
@@ -57,7 +57,7 @@
 	\end{enumerate}
 	
 	\section{The Enthalpy Difference Method}
-	The enthalpy accounts for the specific heat's temperature dependence automatically.  For a constant $C_p$, the equation simplified to what you often see in textbooks, i.e., $\dot{m}_cC_p\Delta T $. When specific heat has a temperature dependence, you would integrate this expression:
+	The enthalpy accounts for the specific heat's temperature dependence automatically.  For a constant $C_p$, the equation simplifies to what you often see in textbooks, i.e., $\dot{m}_cC_p\Delta T $. When specific heat has a temperature dependence, you would integrate this expression:
 	
 	\begin{equation}		
 		h_{c,out}-h_{c,in} = \int_{T_{c,in}}^{T_{c,out}}C_p(T)dT
@@ -66,6 +66,26 @@
 	Averaging $C_p$ at the inlet and outlet is essentially a shortcut to approximate this integral.
 	
 	In the majority of cases, this is usually good enough. But if your system has a fluid where the specific heat has a strong dependence on temperature, this is the way to go.
+	
+	You probably don't have an equation that provides the heat capacity as a function of temperature but if you do, it's a simple (or not so simple) matter of integration. If you have data points at a fixed number of equally-spaced temperatures over the integration range, you can numerically integrate to get the enthalpy change.
+	
+	Here's how you would do that:
+	
+	\begin{enumerate}
+		\item Define the temperature range and points
+		\item Get $C_p$ at each point
+		\item Choose an integration method
+			\begin{enumerate}
+				\item Trapezoidal Rule
+				\item Simpson's 1/3 Rule (if n is even)			
+				
+			\end{enumerate}
+		\item Computer the integral
+		\item Calculate Q
+		Once you have \Delta H, compute 
+		
+		
+	\end{enumerate}
 	
 	
 	
