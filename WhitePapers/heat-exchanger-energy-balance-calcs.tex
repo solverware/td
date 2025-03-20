@@ -76,47 +76,29 @@
 			\begin{itemize}
 				\item Pick a number of intervals, (n), to divide the range $T_{c,in}$ to $T_{c,out}$. This gives you $n+1$ points.
 				\item Compute the temperature step size: 
-				$\Delta T = \frac{T_{c,out} - T_{c,in}}{n}$
+				$$\Delta T = \frac{T_{c,out} - T_{c,in}}{n}$$
 				\item Points: $T_i= T_{c,in} + i\cdot\Delta T$
 			\end{itemize}
 		\item Get $C_p$ at each point
 			\begin{itemize}
-				\item If you have routines that accomplish this, then simply write the code to get the $C_p% as a function of $T$.
-			\end{itemize}
-	
+				\item If you have routines that accomplish this, then simply write the code to get the $C_p$ as a function of $T$. Otherwise, look up the values from a reliable source.
+			\end{itemize}	
 		\item Choose an integration method
+		
+		For equally-spaced points, two common numerical integration methods are:
 			\begin{enumerate}
-				\item Trapezoidal Rule
-				\item Simpson's 1/3 Rule (if n is even)			
-				
+				\item Trapezoidal Rule - Approximates the area under the curve by trapezoids. It’s straightforward and decently accurate for smooth $C_p(T)$ functions.
+				\item Simpson's 1/3 Rule (if n is even) - Fits parabolas over pairs of intervals, usually more accurate but requires an even number of intervals (odd number of points).
 			\end{enumerate}
 		\item Computer the integral
-		\item Calculate Q
-		Once you have $\Delta H$, compute 
+		\item Calculate $\dot Q$ - 
+		Once you have $\Delta H$, 
+		compute $$\dot Q = m_c\cdot\Delta H $$
 		
 		
 	\end{enumerate}
 	
 	
-	
-	
 	\section{Main Content}
-	More text here. The content will naturally split between columns.
-	The White House is ramping up its efforts to make good on President Donald Trump’s long-held promise to end the Russia-Ukraine war, with Washington, Moscow and Kyiv all expected to send officials to Saudi Arabia for meetings in the coming days.
-	
-	The meetings follow Trump’s back-to-back calls this week with Ukrainian President Volodymyr Zelensky on Wednesday and Russian President Vladimir Putin on Tuesday, during which both foreign leaders agreed to a pause on attacks on energy targets.
-	
-	The specifics of that pause, however — which falls well short of the broader, US-proposed 30-day ceasefire deal that Ukraine agreed to earlier this month — are still murky.
-	
-	“The two leaders also agreed on a partial ceasefire against energy,” according to a Trump administration readout of Trump and Zelensky’s call.
-	
-	The readout went on to say that “technical teams will meet in Saudi Arabia in the coming days.” Those meetings are designed for US and Russian officials to hammer out more specific language on the deal reached by Trump and Putin, as well as other areas of negotiation, including broadening the agreement to the Black Sea on the way to a full ceasefire. The talks won’t involve top US Cabinet-level officials, the State Department said Wednesday.
-	
-	But those next steps come amid deepening questions over what, specifically, Trump and Putin agreed to during their Tuesday conversation – and how that’s being interpreted in Ukraine, which is continuing to be bombarded by Russia.
-	
-	Zelensky said at a Wednesday evening news conference that the proposed pause in attacks on Ukrainian and Russian targets would “most likely” apply to “energy facilities” – but that “civilian infrastructure” was also being talked about.
-	
-	
-	
 	
 \end{document}
