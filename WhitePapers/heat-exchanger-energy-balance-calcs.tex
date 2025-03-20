@@ -73,7 +73,17 @@
 	
 	\begin{enumerate}
 		\item Define the temperature range and points
+			\begin{itemize}
+				\item Pick a number of intervals, (n), to divide the range $T_{c,in}$ to $T_{c,out}$. This gives you $n+1$ points.
+				\item Compute the temperature step size: 
+				$\Delta T = \frac{T_{c,out} - T_{c,in}}{n}$
+				\item Points: $T_i= T_{c,in} + i\cdot\Delta T$
+			\end{itemize}
 		\item Get $C_p$ at each point
+			\begin{itemize}
+				\item If you have routines that accomplish this, then simply write the code to get the $C_p% as a function of $T$.
+			\end{itemize}
+	
 		\item Choose an integration method
 			\begin{enumerate}
 				\item Trapezoidal Rule
@@ -82,7 +92,7 @@
 			\end{enumerate}
 		\item Computer the integral
 		\item Calculate Q
-		Once you have \Delta H, compute 
+		Once you have $\Delta H$, compute 
 		
 		
 	\end{enumerate}
