@@ -3,6 +3,21 @@
 \usepackage{geometry}              % Optional: for margin control
 \usepackage{enumitem}
 \geometry{margin=1in}     % Adjust margins if needed
+\usepackage{xcolor}
+\usepackage{listings}
+\lstset{language=[Sharp]C}
+\lstset{
+	basicstyle=\footnotesize\ttfamily,
+	breaklines=true,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{green!40!black},
+	stringstyle=\color{orange},
+	frame=none,
+	showstringspaces=false
+}
+
 
 \title{Calculating Energy Balances in Heat Exchanger Tests}
 \author{Mike Stephenson, Solverware}
@@ -95,10 +110,43 @@
 		Once you have $\Delta H$, 
 		compute $$\dot Q = m_c\cdot\Delta H $$
 		
-		
 	\end{enumerate}
 	
 	
-	\section{Main Content}
+	\section{Physical Property Library (PPLIB)}
+	Solverware created a library of physical properties of various materials including common fluids such as air, steam, water, glycols, and many others. It is interface-based\footnote{Design Patterns: Elements of Reusable Object-Oriented Software, E. Gamma, R. Helm, R. Johnson, J. Vlissides, 1994.} which greatly simplifies the implementation details. For example, the properties of water and steam, i.e., the so-called "steam tables," are based on the International Association for the Properties of Water and Steam (IAPWS).\footnote{https://iapws.org/release.html} The IAPWS 1997 Industrial formulation (IF97) is quite complex and is the accepted standard. Using the physical property library is the same regardless of the fluid and its implementation methodology. The routines can be curve-fits, data table lookups with interpolations, or specialized implementations like the steam tables.
+	
+	This library has routines that allow you to query the library with simple function calls. For the case of nitrogen, we simply call 
+	
+	The variable \lstinline|x| is initialized to zero.
+\begin{lstlisting}[language={[Sharp]C}]
+namespace PPLIBstd
+{
+	public interface IHeatTransferFluid
+	{
+		string MaterialName { get; set; }
+		double MDOT { get; set; }
+		double RHO { get; set; }
+		double CP { get; set; }
+		double MU { get; set; }
+		double K { get; set; }
+		double Pr { get; set; }
+		double Re { get; set; }
+		double Y { get; set; }
+		double MW { get; set; }
+		
+		double CalcRHO(double T, double P);
+		double CalcCP(double T, double P);
+		double CalcMU(double T, double P);
+		double CalcK(double T, double P);
+		double CalcPr(double T, double P);
+		double CalcRe(double mdot, double T, double P);
+		void Solve(double mdot, double T, double P);
+	}
+}
+
+\end{lstlisting}
+
+	
 	
 \end{document}
