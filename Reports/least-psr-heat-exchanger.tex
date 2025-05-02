@@ -1,8 +1,5 @@
 \documentclass[]{report}
-\usepackage{minted}
-
-
-%\usepackage{listings}
+\usepackage{listings}
 \usepackage{xcolor} % For syntax highlighting colors
 % Configure listings for C#
 
@@ -10,8 +7,10 @@
 \title{Leverage Engine Air System Technology - Primary Surface Heat Exchanger }
 \author{Mike Stephenson, Solverware}
 
+\lstdefinestyle{sharpc}{language=[Sharp]C, frame=lr, rulecolor=\color{blue!80!black}}
 
 \begin{document}
+
 % \maketitle
 
 \begin{abstract}
@@ -26,10 +25,20 @@ Data from tests are provided as text files having the CSV format, meaning values
 
 The solution was to create an application (named PerfTest) that reads the CSV file and creates an actual Excel spreadsheet having the XLSX file extention. This design provides an entry point to add Excel built-in functions into the spreadsheet to analyze the data as well as custom functions to provide physical properties.
 
-The application did a few things:@@@
+The application did a few things:
 
 
-
+\begin{lstlisting}
+	using System;
+	
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Hello, World!");
+		}
+	}
+\end{lstlisting}
 
 
 
