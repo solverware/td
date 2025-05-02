@@ -76,7 +76,17 @@ Data from tests are provided as text files having the CSV format, meaning values
 
 The solution was to create an application (named PerfTest) that reads the CSV file and creates an actual Excel spreadsheet having the XLSX file extention. This design provides an entry point to add Excel built-in functions into the spreadsheet to analyze the data as well as custom functions to provide physical properties.
 
-The application did a few things:
+The application does several pieces of work:
+
+\begin{enumerate}
+	\item Only migrates data of interest as the CSV file has many fields which have nothing to do with heat exchanger performance
+	\item Performs unit conversions where appropriate
+	\item Adds columns for statistical analysis, including averages of thermocouple readings and standard deviations
+	\item Adds columns for physical properties of the heat transfer fluid using custom Excel add-in functions
+	\item Adds a page that shows all temperature readings with a check for outliers
+	\item Adds data goodness checks such as energy balance calculations
+	
+\end{enumerate}
 
 It created an Excel pared-down spreadsheet with only performance data kept-in.
 Did unit conversions for certain fields.
