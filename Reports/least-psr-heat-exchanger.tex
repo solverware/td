@@ -107,6 +107,29 @@ Added columns for statistical analysis, including average and standard deviation
 \end{lstlisting}
 
 
+\section{Methodology}
+\subsection{Statistical Measures}
+\subsection{Energy Balance Calculations}
+In an ideal heat exchanger (no losses), the heat lost by the hot fluid equals the heat gained by the cold fluid: 
+
+$$Qh=QcQ_h = Q_cQ_h = Q_c$$
+% So, mhCp,hΔTh=mcCp,cΔTcm_h C_{p,h} \Delta T_h = m_c C_{p,c} \Delta T_cm_h C_{p,h} \Delta T_h = m_c C_{p,c} \Delta T_c
+
+
+
+The percent relative deviation for the heat exchanger energy balance is calculated as:
+
+\begin{equation}
+	{Deviation (\%)} = \frac{\left| |Q_h| - Q_c \right|}{\frac{|Q_h| + Q_c}{2}} \times 100
+\end{equation}
+
+where \( Q_h \) is the heat transfer rate from the hot side (negative, indicating heat loss), \( Q_c \) is the heat transfer rate to the cold side (positive, indicating heat gain), and \( |Q_h| \) is the absolute value of the hot-side heat transfer.
+\subsection{Colburn Modulus}
+\begin{equation}
+	j=St\cdot{Pr^{2/3}}
+\end{equation}
+
+\subsection{Friction Factor}
 
 \section{Spreadsheet}
 
