@@ -113,7 +113,7 @@ Added columns for statistical analysis, including average and standard deviation
 \subsection{Energy Balance Calculations}
 In an ideal heat exchanger (no losses), the heat lost by the hot fluid equals the heat gained by the cold fluid: $Q_h=Q_c$. 
 
-Technically, the most accurate approach is to use the enthalpy difference:
+%Technically, the most accurate approach is to use the enthalpy difference:
 \begin{equation}
 	Q_c=m_c(h_{c,out}-h_{c,in})
 \end{equation}
@@ -125,7 +125,17 @@ h_{c,out}-h_{c,in}\int_{T_{c,out}}^{T_{c,in}}C_p(T)dT
 If the $C_p$ data is discrete data points, one could numerically integrate the data over the interval using any of the numerical integration methods such as Trapezoidal Rule or Simpson's rule. However, in most applications, especially over a narrow temperature range, there simply isn't much variation so this is overkill. Averaging $C_p$ at the inlet and outlet is essentially a shortcut to approximate this integral and is often all that is needed.
 
 
-There are no strict universal standard for reporting energy balance deviations in heat exchangers, but there are common practices in engineering, especially in testing, research, and industry, that make the results clear and useful. Here is how it is \textit{usually} approached:
+There are no strict universal standard for reporting energy balance deviations in heat exchangers, but there are common practices in engineering, especially in testing, research, and industry, that make the results clear and useful. There are four common methods to report energy balance deviation:
+
+\begin{enumerate}
+	\item Percentage Difference (relative deviation)
+	\item Absolute Difference
+	\item Ratio of Heat Transfers
+	\item Energy Balance Closure
+\end{enumerate}
+
+
+Here is how it is \textit{usually} approached:
 
 
 
