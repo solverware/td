@@ -114,6 +114,18 @@ Added columns for statistical analysis, including average and standard deviation
 \subsection{Outlier Detection}
 An outlier is defined as a data point that significantly deviates from the rest of the observations in a dataset, often identified as being unusually distant from the mean or median, or not fitting the expected pattern or distribution of the data. Statistically, it can be defined as a value that lies beyond a specified threshold, such as more than 1.5 times the interquartile range (IQR) \footnote{Tukey, J.W., "Exploratory Data Analysis", Addison-Wesley (1977)} from the first or third quartile, or more than two standard deviations from the mean in a normal distribution.
 
+The Z-score directly measures how many standard deviations a data point is from the mean of a dataset. This relationship is fundamental to its use in statistics, including outlier detection of thermocouple data. 
+
+The Z-score for a data point is calculated as:
+\begin{equation}
+Z=\frac{x-\mu}{\sigma}
+\end{equation}
+where $\mu$ is the mean, $\sigma$ is the standard deviation and  $x - \mu$ is the deviation of the data point from the mean.
+
+In order to be able to quickly determine if outliers exist, the Excel spreadsheet uses \textit{conditional formatting}. If the Z-value exceeds the specified threshold, the cell will display in red. This allows the analyst to see immediately if any points are outliers without having to inspect every data point.
+
+
+
 
 \subsection{Energy Balance Calculations}
 In an ideal heat exchanger (no losses), the heat lost by the hot fluid equals the heat gained by the cold fluid: $Q_h=Q_c$. 
