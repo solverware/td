@@ -122,7 +122,7 @@ where ( h ) is the specific enthalpy, which accounts for the heat capacities tem
 h_{c,out}-h_{c,in}\int_{T_{c,out}}^{T_{c,in}}C_p(T)dT
 \end{equation}
 
-Averaging $C_p$ at the inlet and outlet is essentially a shortcut to approximate this integral.
+If the $C_p$ data is discrete data points, one could numerically integrate the data over the interval using any of the numerical integration methods such as Trapezoidal Rule or Simpson's rule. However, in most applications, especially over a narrow temperature range, there simply isn't much variation so this is overkill. Averaging $C_p$ at the inlet and outlet is essentially a shortcut to approximate this integral and is often all that is needed.
 
 
 The percent relative deviation for the heat exchanger energy balance is calculated as:
