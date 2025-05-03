@@ -2,6 +2,9 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage[style=verbose,backend=biber]{biblatex}
+\addbibresource{yourbibliography.bib}
+
 \lstloadlanguages{C,C++,csh,Java}
 
 \definecolor{red}{rgb}{0.6,0,0} 
@@ -137,10 +140,9 @@ There are no strict universal standard for reporting energy balance deviations i
 
 Here is how it is \textit{usually} approached:
 
+The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5\footnote{ASME, "Single Phase Heat Exchangers", "asdfasdf") often suggest reporting imbalances as a percentage of mean heat transfer.
 
-
-
-The percent relative deviation for the heat exchanger energy balance is calculated as:
+It is calculated as:
 
 \begin{equation}
 	{Deviation (\%)} = \frac{\left| |Q_h| - Q_c \right|}{\frac{|Q_h| + Q_c}{2}} \times 100
@@ -158,5 +160,5 @@ where \( Q_h \) is the heat transfer rate from the hot side (negative, indicatin
 
 	
 \section{Appendix}
-
+\printbibliography
 \end{document}          
