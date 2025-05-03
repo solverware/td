@@ -1,4 +1,4 @@
-\documentclass[]{report}
+\documentclass[]{article}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
@@ -111,6 +111,10 @@ Added columns for statistical analysis, including average and standard deviation
 
 \section{Methodology}
 \subsection{Statistical Measures}
+\subsection{Outlier Detection}
+An outlier is defined as a data point that significantly deviates from the rest of the observations in a dataset, often identified as being unusually distant from the mean or median, or not fitting the expected pattern or distribution of the data. Statistically, it can be defined as a value that lies beyond a specified threshold, such as more than 1.5 times the interquartile range (IQR) \footnote{Tukey, J.W., "Exploratory Data Analysis", Addison-Wesley (1977)} from the first or third quartile, or more than two standard deviations from the mean in a normal distribution.
+
+
 \subsection{Energy Balance Calculations}
 In an ideal heat exchanger (no losses), the heat lost by the hot fluid equals the heat gained by the cold fluid: $Q_h=Q_c$. 
 
@@ -138,7 +142,7 @@ There are no strict universal standard for reporting energy balance deviations i
 
 Here is how it is \textit{usually} approached:
 
-The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{ASME, "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
+The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{American Society of Mechanical Engineers (ASME), "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
 
 %This is a statement.\footnote{ASME, "Single Phase Heat Exchangers", asdfasdf}
 
