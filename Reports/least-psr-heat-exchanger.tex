@@ -1,4 +1,6 @@
 \documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
@@ -151,10 +153,15 @@ There are no strict universal standard for reporting energy balance deviations i
 	\item Energy Balance Closure
 \end{enumerate}
 
+\citet{example2023}
+
+\citep{example2023}
+
+
 
 Here is how it is \textit{usually} approached:
 
-The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{American Society of Mechanical Engineers (ASME), "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
+The percent relative, relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{American Society of Mechanical Engineers (ASME), "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
 
 %This is a statement.\footnote{ASME, "Single Phase Heat Exchangers", asdfasdf}
 
@@ -176,5 +183,8 @@ where \( Q_h \) is the heat transfer rate from the hot side (negative, indicatin
 
 	
 \section{Appendix}
+% Add bibliography at the end
+\bibliographystyle{plain} % Choose a style: plain, alpha, unsrt, etc.
+\bibliography{references}
 
 \end{document}          
