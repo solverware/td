@@ -153,13 +153,10 @@ There are no strict universal standard for reporting energy balance deviations i
 	\item Energy Balance Closure
 \end{enumerate}
 
-This is where I reference the example using "T" type.\citet{example2023}
+This is where I reference the example using "T" type.\citep*{example2023}
 
-This is where I reference the example using the "P" type.\citep{example2023}
 
-This is where I reference Knuth with the "P" type.\citep{knuth1997}
-
-This is where I reference Knuth with the "T" type.\citet{knuth1997}
+This is where I reference Knuth with the "T" type.\citep*{knuth1997}
 
 
 
@@ -190,7 +187,9 @@ where \( Q_h \) is the heat transfer rate from the hot side (negative, indicatin
 % Add bibliography at the end
 
 
-\bibliographystyle{plain} % Choose a style: plain, alpha, unsrt, etc.
+\bibliographystyle{unsrtnat}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{plainnat}
 \bibliography{references}
 
 \end{document}          
