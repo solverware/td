@@ -219,15 +219,31 @@ This is where I reference Knuth with the "T" type.\citep*{knuth1997}
 
 
 where \( Q_h \) is the heat transfer rate from the hot side (negative, indicating heat loss), \( Q_c \) is the heat transfer rate to the cold side (positive, indicating heat gain), and \( |Q_h| \) is the absolute value of the hot-side heat transfer.
-\subsection{Colburn Modulus}
+\section{Colburn Modulus}
 
 The Colburn Modulus is also referred to as the "J-factor."\citep*{kaysandlondon}
 \begin{equation}
 	j=St\cdot{Pr^{2/3}}
 \end{equation}
 
-\subsection{Friction Factor}
+\section{Friction Factor Determination}
+When the pressure loss is measured in a test rig, the measured pressure drop includes all pressure drop components of which the frictional losses is just one. There are entrance and exit effects, flow acceleration as well as core friction. We need to determine these other three losses and subtract them from the total pressure drop to determine the friction factor.
 
+The full pressure drop equation is shown in equation~\eqref{eq:pressureDropEqn}.
+
+\begin{equation}		
+	\frac{\Delta P}{P_1}=\frac{G^2}{2g_c} \frac {v_1}{P_1} \left[(K_c+1+\sigma^2) +2\left(\frac{v_2}{v_1}-1\right) + 
+	f \frac{A}{A_c}  \frac{v_m}{v_1} - (1-\sigma^2-K_e)\frac{v_2}{v_1}  \right]
+	\label{eq:pressureDropEqn}		
+\end{equation}
+
+Rearranging to solve for the friction factor, we get the following equation:
+
+\begin{equation}
+	f = \frac{A_c}{A}\frac{v_1}{v_m} \left[ \frac{2g_c \Delta P}{v_1 G^2} -(K_c+1+\sigma^2)-2\left(\frac{v_2}{v_1}-1\right)+(1-\sigma^2-K_e)\frac{v_2}{v_1}\right]
+\end{equation}	
+
+We end up with an equation that is a function of two measured values from the test, i.e., the pressure drop and the mass flow rate. The remaining quantities are functions of the geometry of the surface, the specific volume of the fluid and the Reynolds number.
 
 \section{Spreadsheet}
 
