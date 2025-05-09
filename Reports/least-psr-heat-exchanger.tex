@@ -135,7 +135,7 @@ The Engineering Statistics Handbook has a section on outlier detection\citep*{ou
 The Engineering Statistics Handbook has a section on outlier detection\footnote{NIST, Detection of Outliers, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm}.
 
 
-\subsection{Energy Balance Calculations}
+\section{Energy Balance Calculations}
 In an ideal heat exchanger (no losses), the heat lost by the hot fluid equals the heat gained by the cold fluid: $Q_h=Q_c$. 
 
 %Technically, the most accurate approach is to use the enthalpy difference:
@@ -181,6 +181,15 @@ It is simply the difference in the rate of heat transfer.
 
 
 \subsection{Ratio of Heat Transfers}
+
+The energy balance may be reported as a ratio of heat transfers, where a value of unity indicates good balance. When it deviates from 1 it highlights the direction of the imbalance. For example, a value greater than 1 indicates external heat input. 
+
+It's typically used as a quick check when presenting to non-technical audiences.
+
+\begin{equation}
+	Ratio = \frac {Q_c}}{|Q_h}
+\end{equation}
+
 
 \subsection{Energy Balance Closure}
 
