@@ -159,6 +159,27 @@ There are no strict universal standard for reporting energy balance deviations i
 	\item Energy Balance Closure
 \end{enumerate}
 
+\subsection{Percent Difference (relative deviation)}
+
+The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{American Society of Mechanical Engineers (ASME), "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
+
+It is calculated as:
+
+\begin{equation}
+	{Deviation (\%)} = \frac{\left| |Q_h| - Q_c \right|}{\frac{|Q_h| + Q_c}{2}} \times 100
+\end{equation}
+
+\subsection{Absolute Difference}
+
+The energy balance is sometimes reported as absolute difference which shows the raw imbalance and can be useful for troubleshooting specific losses (e.g., heat to the surroundings). 
+
+It is simply the difference in the rate of heat transfer.
+
+\begin{equation}
+	{\Delta{Q}=|Q_h| - Q_c}
+\end{equation}
+
+
 This is where I reference the example using "T" type.\citep*{example2023}
 
 
@@ -166,17 +187,7 @@ This is where I reference Knuth with the "T" type.\citep*{knuth1997}
 
 
 
-Here is how it is \textit{usually} approached:
 
-The percent relative deviation for the heat exchanger energy balance is widely used because it's intuitive, accounts for scale and aligns with engineering tolerances. For example, ASME standards for heat exchanger testing (e.g., ASME PTC 12.5 \footnote{American Society of Mechanical Engineers (ASME), "Single Phase Heat Exchangers", ASME PTC 12.5-2000 (R2015)}) often suggest reporting imbalances as a percentage of mean heat transfer.
-
-%This is a statement.\footnote{ASME, "Single Phase Heat Exchangers", asdfasdf}
-
-It is calculated as:
-
-\begin{equation}
-	{Deviation (\%)} = \frac{\left| |Q_h| - Q_c \right|}{\frac{|Q_h| + Q_c}{2}} \times 100
-\end{equation}
 
 where \( Q_h \) is the heat transfer rate from the hot side (negative, indicating heat loss), \( Q_c \) is the heat transfer rate to the cold side (positive, indicating heat gain), and \( |Q_h| \) is the absolute value of the hot-side heat transfer.
 \subsection{Colburn Modulus}
