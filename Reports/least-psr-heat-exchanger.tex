@@ -4,6 +4,7 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{xcolor}
+%\usepackage[skip=10pt, indent=20pt]{parskip}
 
 \lstloadlanguages{C,C++,csh,Java}
 
@@ -281,7 +282,7 @@ Rearranging to solve for the friction factor, we get the following equation:
 
 We end up with an equation that is a function of two measured values from the test, i.e., the pressure drop and the mass flow rate. The remaining quantities are functions of the geometry of the surface, the specific volume of the fluid and the Reynolds number.
 
-\subsection{Contracton Loss}
+\subsection{Contraction Loss}
 A contraction loss is the specific pressure loss caused by the sudden reduction in flow area such as when the fluid enters the narrower passages of the heat exchanger. 
 
 Contraction losses occur when a fluid enters the narrower passages of a heat exchanger from a larger inlet, such as a header or manifold, resulting in a sudden acceleration of flow. This abrupt reduction in cross-sectional area, often referred to as "entrance loss" or "sudden contraction loss," causes a pressure drop as the fluid's kinetic energy increases, accompanied by the formation of turbulent eddies and a vena contracta—a region where the flow streamlines constrict further. These effects lead to energy dissipation due to flow separation and mixing downstream of the contraction. The severity of the loss depends on the area ratio between the inlet and passage, the fluid's velocity, and the geometry of the transition, making it a key factor in heat exchanger performance optimization.
@@ -297,7 +298,7 @@ A single, experimentally-determined dimensionless factor known as the "friction 
 Expansion losses occur when a fluid exits the confined passages of a heat exchanger into a larger cross-sectional area, such as a header or plenum, leading to a sudden deceleration of flow. This abrupt expansion causes a pressure drop as the fluid's kinetic energy is partially dissipated into turbulent eddies and chaotic flow patterns, rather than being recovered as useful pressure energy. The phenomenon, often termed "exit loss" or "sudden expansion loss," is driven by flow separation and recirculation zones formed at the transition, which increase energy dissipation. Factors like the ratio of passage to outlet area and the fluid's velocity influence the magnitude of these losses, making them a critical consideration in heat exchanger design to optimize overall system efficiency.
 
 \subsection{Correlations}
-Compact CoreSolver has routines that provide $K_c$ and $K_e% as a function of Reynolds number. For the purposes of the heat exchagner performance tests, Excel add-in functions were developed that provide these values as a simple call in a cell.
+Compact CoreSolver has routines that provide $K_c$ and $K_e$ as a function of Reynolds number. For the purposes of the heat exchagner performance tests, Excel add-in functions were developed that provide these values as a simple call in a cell.
 
 
 \section{Spreadsheet}
