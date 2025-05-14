@@ -77,7 +77,7 @@
 %\begin{abstract}
 %\end{abstract}
 
-\section{Introduction}
+%\section{Introduction}
 % Introducing the project and its objectives
 The development of efficient and cost-effective fuel cell systems is critical for reducing carbon emissions in heavy-duty applications, such as construction and transportation machinery. Project FC352, supported by the U.S. Department of Energy (DOE) under award DE-EE200620, aims to advance Polymer Electrolyte Membrane Fuel Cell (PEMFC) technology for heavy-duty vehicles with power outputs ranging from \SI{350}{\kilo\watt} to \SI{1000}{\kilo\watt}. Led by Caterpillar Inc., in collaboration with BorgWarner and Ballard Power Systems, the project focuses on optimizing the balance of plant (BOP) components to meet DOE targets for efficiency, cost, reliability, durability, size, and weight. With a total funding of \$2.5 million, the initiative, running from August 2022 to December 2025, is projected to reduce CO$_2$ emissions by 1.5 million tonnes over a decade if deployed across half of Caterpillar's target product line~\cite{wang2024}.
 
@@ -94,7 +94,7 @@ This report presents the results of small-scale heat exchanger tests conducted a
 	\label{fig:recuperator}
 \end{figure}
 
-\subsection{Caterpillar's Primary Surface Recuperator Technology}
+\section{Caterpillar's Primary Surface Recuperator Technology}
 
 Caterpillar has a long history in the development of compact heat exchangers from the 1960s. Caterpillar was interested in gas turbines and heat exchangers can be used to increase their thermal efficiency using the regenerative Brayton cycle also known as the recuperated gas turbine cycle. When Caterpillar acquired Solar Turbines, the compact heat exchangers, referred to as recuperators, were used to market recuperated versions of several existing turbines as well as a clean sheet design, the Mercury 50.
 
@@ -102,6 +102,16 @@ Caterpillar's interest in compact heat exchangers extends well beyond gas turbin
 
 
 \section{Test Rig}
+The test facility uses nitrogen rather than air by taking advantage of a liquid nitrogen source.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=0.7\textwidth]{photo-test-article.png}
+	\caption{Heat Exchanger Test Article.}
+	\label{fig:testarticle}
+\end{figure}
+
+
 \section{Data Analysis}
 \subsection{Creating an MS Excel Analysis Spreadsheet}
 Data from tests are provided as text files having the CSV format, meaning values are provided in rows with columns separated by columns. Such files use the extension CSV. While CSV file are easily imported into Excel, they are effectively dumb spreadsheets as there are no formulas or calculations. As such, any work done by the spreadsheet would entail editing each spreadsheet to add such functionality. This is impractical when there is more than one spreadsheet to analyze as was the case here.
@@ -317,7 +327,7 @@ Frictional losses manifest as a fluid moves through the passages of a heat excha
 
 A single, experimentally-determined dimensionless factor known as the "friction factor" is used to include all of these effects. 
 
-In Compact Heat Exchangers by W.M. Kays and A.L. London, the friction factor used is the Fanning friction factor. This is evident from the context of their work, which focuses on the thermohydraulic performance of compact heat exchanger surfaces, where the Fanning friction factor ($f$) is commonly employed to characterize pressure drop due to fluid flow resistance. The Fanning friction factor is defined as the ratio of wall shear stress to the flow’s kinetic energy per unit volume and is typically used in heat exchanger design to correlate pressure drop with Reynolds number and surface geometry.
+In Compact Heat Exchangers \citep*{kaysandlondon}, the friction factor used is the Fanning friction factor. This is evident from the context of their work, which focuses on the thermohydraulic performance of compact heat exchanger surfaces, where the Fanning friction factor ($f$) is commonly employed to characterize pressure drop due to fluid flow resistance. The Fanning friction factor is defined as the ratio of wall shear stress to the flow’s kinetic energy per unit volume and is typically used in heat exchanger design to correlate pressure drop with Reynolds number and surface geometry.
 
 The Darcy friction factor, which is four times the Fanning friction factor ($f$), is less commonly used in the context of compact heat exchangers and is more typical in pipe flow calculations. Moody diagrams, for example, use the Darcy friction factor.
 
