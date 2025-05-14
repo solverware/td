@@ -8,6 +8,7 @@
 \usepackage{siunitx}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{float}
 \graphicspath{{images/}}
 
 \lstloadlanguages{C,C++,csh,Java}
@@ -86,9 +87,9 @@ The BOP, encompassing air supply, thermal management, and other supporting syste
 % Connecting to heat exchanger testing
 This report presents the results of small-scale heat exchanger tests conducted as part of Project FC352's efforts to enhance BOP efficiency. These tests, aligned with the project's recuperator development activities, evaluate the performance of compact heat exchanger designs. A key benefit of these designs is the reduction of heat rejection to the coolant, which minimizes coolant volume and cooling system size, supporting the project's goals of reducing BOP size to \SI{0.168}{\liter\per\kilo\watt} and cost to \$8.8 per kilowatt~\cite{wang2024}. The following sections detail the experimental setup, results, and implications for heavy-duty PEMFC applications.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 	\centering
-	\includegraphics[width=0.8\textwidth]{simplified-schematic.png}
+	\includegraphics[width=0.7\textwidth]{simplified-schematic.png}
 	\caption{Schematic of a compact heat exchanger (recuperator) tested in Project FC352 \cite{wang2024}.}
 	\label{fig:recuperator}
 \end{figure}
@@ -314,7 +315,11 @@ Frictional losses can be substantial and are due to viscous drag (the force due 
 
 Frictional losses manifest as a fluid moves through the passages of a heat exchanger, where the fluid experiences resistance due to viscous interactions with the passage walls. This phenomenon, often described as "wall friction" or "viscous drag," results in a gradual pressure drop along the passage length as the fluid's mechanical energy is converted into heat through shear stresses within the boundary layer. Factors such as surface roughness, passage geometry, and the fluid's viscosity and velocity significantly influence the extent of these losses. In turbulent flow, additional energy dissipation occurs due to chaotic eddies interacting with the walls, amplifying the frictional pressure loss. Minimizing these losses is crucial for enhancing the efficiency of heat exchanger systems.
 
-A single, experimentally-determined dimensionless factor known as the "friction factor" is used to include all of these effects.
+A single, experimentally-determined dimensionless factor known as the "friction factor" is used to include all of these effects. 
+
+In Compact Heat Exchangers by W.M. Kays and A.L. London, the friction factor used is the Fanning friction factor. This is evident from the context of their work, which focuses on the thermohydraulic performance of compact heat exchanger surfaces, where the Fanning friction factor ($f$) is commonly employed to characterize pressure drop due to fluid flow resistance. The Fanning friction factor is defined as the ratio of wall shear stress to the flow’s kinetic energy per unit volume and is typically used in heat exchanger design to correlate pressure drop with Reynolds number and surface geometry.
+
+The Darcy friction factor, which is four times the Fanning friction factor ($f$), is less commonly used in the context of compact heat exchangers and is more typical in pipe flow calculations. Moody diagrams use the Darcy friction factor which differs by a factor of four.
 
 \subsection{Expansion Loss}
 Expansion losses occur when a fluid exits the confined passages of a heat exchanger into a larger cross-sectional area, such as a header or plenum, leading to a sudden deceleration of flow. This abrupt expansion causes a pressure drop as the fluid's kinetic energy is partially dissipated into turbulent eddies and chaotic flow patterns, rather than being recovered as useful pressure energy. The phenomenon, often termed "exit loss" or "sudden expansion loss," is driven by flow separation and recirculation zones formed at the transition, which increase energy dissipation. Factors like the ratio of passage to outlet area and the fluid's velocity influence the magnitude of these losses, making them a critical consideration in heat exchanger design to optimize overall system efficiency.
