@@ -5,6 +5,10 @@
 \usepackage{amsmath}
 \usepackage{xcolor}
 %\usepackage[skip=10pt, indent=20pt]{parskip}
+\usepackage{siunitx}
+\usepackage{geometry}
+\usepackage{graphicx}
+\graphicspath{{images/}}
 
 \lstloadlanguages{C,C++,csh,Java}
 
@@ -73,6 +77,24 @@
 %\end{abstract}
 
 \section{Introduction}
+% Introducing the project and its objectives
+The development of efficient and cost-effective fuel cell systems is critical for reducing carbon emissions in heavy-duty applications, such as construction and transportation machinery. Project FC352, supported by the U.S. Department of Energy (DOE) under award DE-EE200620, aims to advance Polymer Electrolyte Membrane Fuel Cell (PEMFC) technology for heavy-duty vehicles with power outputs ranging from \SI{350}{\kilo\watt} to \SI{1000}{\kilo\watt}. Led by Caterpillar Inc., in collaboration with BorgWarner and Ballard Power Systems, the project focuses on optimizing the balance of plant (BOP) components to meet DOE targets for efficiency, cost, reliability, durability, size, and weight. With a total funding of \$2.5 million, the initiative, running from August 2022 to December 2025, is projected to reduce CO$_2$ emissions by 1.5 million tonnes over a decade if deployed across half of Caterpillar's target product line~\cite{wang2024}.
+
+% Highlighting the role of BOP and thermal management
+The BOP, encompassing air supply, thermal management, and other supporting systems, significantly impacts PEMFC performance, contributing 15--25\% of system costs and approximately 25\% of downtime~\cite{wang2024}. Efficient thermal management is essential to maintain PEMFC stack temperatures within the optimal range of \SIrange{60}{80}{\degreeCelsius}, ensuring performance and durability. Heat exchangers, such as recuperators, play a vital role in rejecting heat from the coolant to the environment, reducing the thermal load on the cooling system. A Pugh analysis was employed to downselect optimal BOP architectures, including potential heat exchanger designs, to achieve these objectives~\cite{wang2024}.
+
+% Connecting to heat exchanger testing
+This report presents the results of small-scale heat exchanger tests conducted as part of Project FC352's efforts to enhance BOP efficiency. These tests, aligned with the project's recuperator development activities, evaluate the performance of compact heat exchanger designs. A key benefit of these designs is the reduction of heat rejection to the coolant, which minimizes coolant volume and cooling system size, supporting the project's goals of reducing BOP size to \SI{0.168}{\liter\per\kilo\watt} and cost to \$8.8 per kilowatt~\cite{wang2024}. The following sections detail the experimental setup, results, and implications for heavy-duty PEMFC applications.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{simplified-schematic.png}
+	\caption{Schematic of a compact heat exchanger (recuperator) tested in Project FC352 \cite{wang2024}.}
+	\label{fig:recuperator}
+\end{figure}
+
+\subsection{Caterpillar's Primary Surface Recuperator Technology}
+
 Caterpillar has a long history in the development of compact heat exchangers from the 1960s. Caterpillar was interested in gas turbines and heat exchangers can be used to increase their thermal efficiency using the regenerative Brayton cycle also known as the recuperated gas turbine cycle. When Caterpillar acquired Solar Turbines, the compact heat exchangers, referred to as recuperators, were used to market recuperated versions of several existing turbines as well as a clean sheet design, the Mercury 50.
 
 Caterpillar's interest in compact heat exchangers extends well beyond gas turbines for many applications, including fuel-cell technologies. A development in the last decade is the opportunity to manufacture prototypes inexpensively by additive manufacturing. Such prototypes can be used in heat exchanger performance tests. These tests can potentially be used to get the empirical data that is used to predict performance and estimate size of heat exchangers.
@@ -302,6 +324,11 @@ Compact CoreSolver has routines that provide $K_c$ and $K_e$ as a function of Re
 
 
 \section{Spreadsheet}
+
+$ GDP_{\text{economy}} = GDP_{\text{per\ capita}} \times N_{\text{workers}} $
+\newline
+\newline
+$ N_{\text{workers}} =  N_{\text{people}} + N_{\text{humanoid\ robots}} $
 
 	
 \section{Appendix}
