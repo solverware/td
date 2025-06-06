@@ -1,0 +1,39 @@
+\documentclass[]{article}
+
+%opening
+\title{Creating Gas Mixtures that Contain Water Vapor}
+\author{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Introduction}
+Many gas mixtures, including air and combustion gases, contain some amount of water as vapor.
+
+It is necessary to know the mole fraction of water in the gas and its temperature and pressure. The mole fraction is necessary to get the partial pressure of the water. If we are dealing with ambient conditions, humaid air has some water content which is expressed as relative humidity. We need to know that content as  mole fraction. Once we have the mole fraction of water vapor ($x_v$), we can calculate the partial pressure of water vapor: $P_v=x_v P$. We then use the steam tables for the water vapor properties.  For example, if we have air at room temperature and 60% relative humidity, it wouild have the following composition:
+
+Nitrogen - 0.769
+Oxygen - 0.206
+Water vapor - 0.014
+Argon - 0.009
+Carbon dioxide - 0.0004
+Other trace gases - 0.0006
+
+For air at 14.7 psia:
+Nitrogen - 11.304 psia
+Oxygen - 3.027 psia
+Water vapor - 0.206 psia
+Argon - 0.132 psia
+Carbon dioxide - 0.00588
+Other gases - 0.00882
+
+
+\subsection{Specific Heat}
+When we want to get the specific heat of the water component, we go into the steam tables and use the temperature and the partial pressure of the water. From the steam tables, $C_p = 0.203 \frac{Btu}{lb°F}$. So the water vapor specific heat component is this value based on the partial pressure and then multiplied by the mole fraction.
+
+\end{document}
