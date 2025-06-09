@@ -19,4 +19,17 @@
 Thermophysical properties are generally defined as physical properties that are involved in heat transfer calculations. These include thermal conductivity $(k)$, specific heat capacity $(C_p)$, Density $(\rho)$ and viscosity $(\mu)$. These properties vary with temperature and pressure and when you have a multicomponent mixture of gases like air or combustion gases, the properties are \textit{usually} determined for the individual components and then battle-tested mixing equations are used to determine the bulk properties of the gas mixtures.
 \section{Estimating the Contribution of Humidity in Air}
 You'll often find thermophysical properties for air and even "humid air." Unfortunately, the degree of humidity may not be specified as is the case in the classic text Compact Heat Exchangers. In gas turbine specifications, a standard temperature and pressure for rating gas turbines is 15°C (59°F), 101.3 kPa (14.7 psia) and 60\% relative humidity. (Reference: ISO 3977-2 (Gas Turbines - Procurement - Part 2))
+
+\section{Sample Problem - Aerodyn Combustion Gas}
+A heat exchanger test was done for Catepillar in 2020 by Aerodyn, of Indianapolis, Indiana. A combustion system was designed for them that was designed to operate stoichiometrically. 
+
+$$ \text{CH}_4 + 2(\text{O}_2 + 3.76\text{N}_2) \rightarrow \text{CO}_2 + 2\text{H}_2\text{O} + 7.52\text{N}_2 $$
+
+With 10% excess air, which is likely how it was run, the equation becomes:
+
+$$ \text{CH}_4 + 2.2(\text{O}_2 + 3.76\text{N}_2) \rightarrow \text{CO}_2 + 2\text{H}_2\text{O} + 0.2\text{O}_2 + 8.272\text{N}_2 $$
+
+
+
+
 \end{document}
