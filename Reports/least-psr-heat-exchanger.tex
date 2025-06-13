@@ -8,13 +8,13 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{biblatex}
+
+\usepackage[backend=biber,style=apa,sorting=none]{biblatex}
+\addbibresource{references.bib}
 %\usepackage{biber}
 %\usepackage{booktabs}
 \graphicspath{{images/}}
-
 \lstloadlanguages{C,C++,csh,Java}
-
 \definecolor{red}{rgb}{0.6,0,0} 
 \definecolor{blue}{rgb}{0,0,0.6}
 \definecolor{green}{rgb}{0,0.8,0}
@@ -81,9 +81,9 @@
 
 %\section{Introduction}
 % Introducing the project and its objectives
-The development of efficient and cost-effective fuel cell systems is critical for reducing carbon emissions in heavy-duty applications, such as construction and transportation machinery. The Leverage Engine Air System Technology (LEAST) project, supported by the U.S. Department of Energy (DOE) under award EE0009620, aims to advance Polymer Electrolyte Membrane Fuel Cell (PEMFC) technology for heavy-duty vehicles with power outputs ranging from \SI{350}{\kilo\watt} to \SI{1000}{\kilo\watt}. Led by Caterpillar Inc., in collaboration with BorgWarner and Ballard Power Systems, the project focuses on optimizing the balance of plant (BOP) components to meet DOE targets for efficiency, cost, reliability, durability, size, and weight. With a total funding of \$2.5 million, the initiative, running from August 2022 to December 2025, is projected to reduce CO$_2$ emissions by 1.5 million tonnes over a decade if deployed across half of Caterpillar's target product line~\cite{wang2024}.
+The development of efficient and cost-effective fuel cell systems is critical for reducing carbon emissions in heavy-duty applications, such as construction and transportation machinery. The Leverage Engine Air System Technology (LEAST) project, supported by the U.S. Department of Energy (DOE) under award EE0009620, aims to advance Polymer Electrolyte Membrane Fuel Cell (PEMFC) technology for heavy-duty vehicles with power outputs ranging from \SI{350}{\kilo\watt} to \SI{1000}{\kilo\watt}. Led by Caterpillar Inc., in collaboration with BorgWarner and Ballard Power Systems, the project focuses on optimizing the balance of plant (BOP) components to meet DOE targets for efficiency, cost, reliability, durability, size, and weight. With a total funding of \$2.5 million, the initiative, running from August 2022 to December 2025, is projected to reduce CO$_2$ emissions by 1.5 million tonnes over a decade if deployed across half of Caterpillar's target product line~\parencite{wang2024}.
 
-And a sample link goes here ~\cite{stephenson}.
+And a sample link goes here ~\parencite{stephenson}.
 
 % Highlighting the role of BOP and thermal management
 The BOP, encompassing air supply, thermal management, and other supporting systems, significantly impacts PEMFC performance, contributing 15--25\% of system costs and approximately 25\% of downtime~\cite{wang2024}. Efficient thermal management is essential to maintain PEMFC stack temperatures within the optimal range of \SIrange{60}{80}{\degreeCelsius}, ensuring performance and durability. Heat exchangers, such as recuperators, play a vital role in rejecting heat from the coolant to the environment, reducing the thermal load on the cooling system (see Figure~\ref{fig:recuperator})~\cite{wang2024}. A Pugh analysis was employed to downselect optimal BOP architectures, including potential heat exchanger designs, to achieve these objectives~\cite{wang2024}.
@@ -176,7 +176,7 @@ where $\mu$ is the mean, $\sigma$ is the standard deviation and  $x - \mu$ is th
 
 In order to be able to quickly determine if outliers exist, the Excel spreadsheet uses \textit{conditional formatting}. If the Z-value exceeds the specified threshold, the cell will display in red. This allows the analyst to see immediately if any points are outliers without having to inspect every data point.
 
-The Engineering Statistics Handbook has a section on outlier detection\citep*{outlierDetection}.
+The Engineering Statistics Handbook has a section on outlier detection\cite{outlierDetection}.
 
 The Engineering Statistics Handbook has a section on outlier detection\footnote{NIST, Detection of Outliers, https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm}.
 
@@ -255,10 +255,10 @@ If you’re validating a design, percentage deviation or closure percentage is k
 If you’re diagnosing issues (e.g., insulation leaks), absolute difference might pair with a loss estimate.
 
 
-This is where I reference the example using "T" type.\citep*{example2023}
+This is where I reference the example using "T" type.\cite{example2023}
 
 
-This is where I reference Knuth with the "T" type.\citep*{knuth1997}
+This is where I reference Knuth with the "T" type.\cite{knuth1997}
 
 
 
@@ -267,7 +267,7 @@ This is where I reference Knuth with the "T" type.\citep*{knuth1997}
 where \( Q_h \) is the heat transfer rate from the hot side (negative, indicating heat loss), \( Q_c \) is the heat transfer rate to the cold side (positive, indicating heat gain), and \( |Q_h| \) is the absolute value of the hot-side heat transfer.
 \section{Colburn Modulus}
 
-The Colburn Modulus is also referred to as the "J-factor."\citep*{kaysandlondon}
+The Colburn Modulus is also referred to as the "J-factor."\cite{kaysandlondon}
 \begin{equation}
 	j=St\cdot{Pr^{2/3}}
 \end{equation}
@@ -339,7 +339,7 @@ Frictional losses manifest as a fluid moves through the passages of a heat excha
 
 A single, experimentally-determined dimensionless factor known as the "friction factor" is used to include all of these effects. 
 
-In Compact Heat Exchangers \citep*{kaysandlondon}, the friction factor used is the Fanning friction factor. This is evident from the context of their work, which focuses on the thermohydraulic performance of compact heat exchanger surfaces, where the Fanning friction factor ($f$) is commonly employed to characterize pressure drop due to fluid flow resistance. The Fanning friction factor is defined as the ratio of wall shear stress to the flow’s kinetic energy per unit volume and is typically used in heat exchanger design to correlate pressure drop with Reynolds number and surface geometry.
+In Compact Heat Exchangers \cite{kaysandlondon}, the friction factor used is the Fanning friction factor. This is evident from the context of their work, which focuses on the thermohydraulic performance of compact heat exchanger surfaces, where the Fanning friction factor ($f$) is commonly employed to characterize pressure drop due to fluid flow resistance. The Fanning friction factor is defined as the ratio of wall shear stress to the flow’s kinetic energy per unit volume and is typically used in heat exchanger design to correlate pressure drop with Reynolds number and surface geometry.
 
 The Darcy friction factor, which is four times the Fanning friction factor ($f$), is less commonly used in the context of compact heat exchangers and is more typical in pipe flow calculations. Moody diagrams, for example, use the Darcy friction factor.
 
@@ -356,6 +356,10 @@ $ GDP_{\text{economy}} = GDP_{\text{per\ capita}} \times N_{\text{workers}} $
 \newline
 \newline
 $ N_{\text{workers}} =  N_{\text{people}} + N_{\text{humanoid\ robots}} $
+
+
+\section{Aerodyn Heat Exchanger Test, 2020}
+Aerodyn 
 
 \section{Experimental Data and Results}
 There were four heat exchangers that were tested. 
@@ -377,7 +381,9 @@ There were four heat exchangers that were tested.
 \end{table}
 
 \subsection{Metal Core}
-The first heat exchanger tested was essentially a duplicate of the core that was tested by Aerodyne in 2020-2021. There was some unexplained data that didn't fit nicely on a straight line!
+The first heat exchanger tested was essentially a duplicate of the core that was tested by Aerodyn Engineering, Inc. in 2020-2021. Inasmuch as the testing took place during the COVID-19 pandemic, there were no Caterpillar personnel at the test facility and results of the tests were communicated electronically, mostly through Excel spreadsheets. The resulting data, basically F\&J data points had some anomolies and these have never been explained.
+
+Moreover, it was decided to take a fresh look at the data and do the analysis using the same methodology used for the tests run recently at Caterpillar. One important item was the use of accurate physical properties using the physical property databases and estimation algorithms of the Compact CoreSolver web application. These routines were repurposed to use in an Excel spreadsheet through the use of custom add-in functions.
 
 
 
@@ -479,9 +485,9 @@ PerfTest uses two libraries to read the raw data from the test and to create the
 
 
 \newpage
-\bibliographystyle{unsrtnat}
+%\bibliographystyle{unsrtnat}
 %\bibliographystyle{abbrvnat}
 %\bibliographystyle{plainnat}
-\bibliography{references}
+%\bibliography{references}
 
 \end{document}          
