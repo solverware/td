@@ -485,15 +485,15 @@ The energy balances varied considerably but were generally less than four percen
 \subsection{F and J Curves}
 
 \begin{tikzpicture}
-	\begin{axis}[
-		xmode=log, % Logarithmic x-axis
-		log basis x=10, % Base 10 for x-axis
-		title=Colburn Modulus,
+	\begin{loglogaxis}[
+		%xmode=log, % Logarithmic x-axis
+		%log basis x=10, % Base 10 for x-axis
+		title=Colburn Modulus (surface 52),
 		xlabel={$Re$},
 		ylabel={$J$},
 		]		
 		\addplot table {52_f.txt};						
-	\end{axis}
+	\end{loglogaxis}
 \end{tikzpicture}
 
 
