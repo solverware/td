@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \usepackage[backend=biber,style=apa,sorting=none]{biblatex}
 \addbibresource{references.bib}
@@ -481,23 +482,52 @@ The energy balances varied considerably but were generally less than four percen
 
 \section{Appendix}
 \subsection{F and J Curves}
-One of the long-standing F\&J surfaces is known as "Surface 52."
-\newline
+One of the long-standing F\&J surfaces is known as "Surface 52" which is shown in Figure \ref{fig:surface52}.
+
+
+\begin{figure}[h]
+\centering
 \begin{tikzpicture}
 	\begin{loglogaxis}[
-		%xmode=log, % Logarithmic x-axis
-		%log basis x=10, % Base 10 for x-axis
-		title=Colburn Modulus (surface 52),
-		xlabel={$Re$},
-		ylabel={$J$},
+		xlabel={Reynolds Number (Re)},
+		ylabel={Friction Factor (F)},
+		axis y line*=left, % Primary y-axis on the left
+		grid=major,
+		%title={Friction and Colburn Factors vs. Reynolds Number},
+		legend pos=north west
+	]
+	% Plot F from F_data.dat
+	\addplot[
+	blue,
+	thick,
+	mark=*,
+	] table[] {52_f.txt};
+	\addlegendentry{F}
+	\end{loglogaxis}		
+
+	\begin{loglogaxis}[
+		ylabel={Colburn j-Factor (J)},
+		axis y line*=right, % Secondary y-axis on the right
+		axis x line=none, % Hide x-axis to avoid overlap
 		]		
-		\addplot table {52_f.txt};						
+	% Plot J from J_data.dat
+	\addplot[
+	red,
+	thick,
+	mark=square*,
+	] table[] {52_j.txt};
+	\addlegendentry{J}	
+	\label{fig:surface52}						
 	\end{loglogaxis}
 \end{tikzpicture}
+\caption{F\&J for Surface 52}
+\label{fig:surface52}
+\end{figure}
 
 
 
 % Add bibliography at the end
+\newpage
 \subsection{PerfTest Console Application}
 A program was written in C\# that does the following.
 
