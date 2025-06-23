@@ -16,8 +16,7 @@
 
 \usepackage{nomencl}
 \makenomenclature
-%\makenomenclature
-%\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
+\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
 
 %\usepackage{booktabs}
 \graphicspath{{images/}}
@@ -85,7 +84,7 @@
 
 %\begin{abstract}
 %\end{abstract}
-
+\section{Nomenclature}
 \nomenclature{$\alpha$}{Angle of attack}
 \printnomenclature
 
@@ -93,7 +92,7 @@
 % Introducing the project and its objectives
 The development of efficient and cost-effective fuel cell systems is critical for reducing carbon emissions in heavy-duty applications, such as construction and transportation machinery. The Leverage Engine Air System Technology (LEAST) project, supported by the U.S. Department of Energy (DOE) under award EE0009620, aims to advance Polymer Electrolyte Membrane Fuel Cell (PEMFC) technology for heavy-duty vehicles with power outputs ranging from \SI{350}{\kilo\watt} to \SI{1000}{\kilo\watt}. Led by Caterpillar Inc., in collaboration with BorgWarner and Ballard Power Systems, the project focuses on optimizing the balance of plant (BOP) components to meet DOE targets for efficiency, cost, reliability, durability, size, and weight. With a total funding of \$2.5 million, the initiative, running from August 2022 to December 2025, is projected to reduce CO$_2$ emissions by 1.5 million tonnes over a decade if deployed across half of Caterpillar's target product line~\parencite{wang2024}.
 
-And a sample link goes here ~\parencite{stephenson}.
+%And a sample link goes here ~\parencite{stephenson}.
 
 % Highlighting the role of BOP and thermal management
 The BOP, encompassing air supply, thermal management, and other supporting systems, significantly impacts PEMFC performance, contributing 15--25\% of system costs and approximately 25\% of downtime~\parencite{wang2024}. Efficient thermal management is essential to maintain PEMFC stack temperatures within the optimal range of \SIrange{60}{80}{\degreeCelsius}, ensuring performance and durability. Heat exchangers, such as recuperators, play a vital role in rejecting heat from the coolant to the environment, reducing the thermal load on the cooling system (see Figure~\ref{fig:recuperator})~\cite{wang2024}. A Pugh analysis was employed to downselect optimal BOP architectures, including potential heat exchanger designs, to achieve these objectives~\cite{wang2024}.
