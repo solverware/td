@@ -14,6 +14,10 @@
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
 
+\usepackage(nomencl)
+\makenomenclature
+\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
+
 %\usepackage{booktabs}
 \graphicspath{{images/}}
 \lstloadlanguages{C,C++,csh,Java}
@@ -510,6 +514,8 @@ A metal core was printed with a reduced which could result in better aerodynamic
 		\hline
 	\end{tabular}
 \end{table}
+
+
 
 
 \subsection{Opaque Core} 
