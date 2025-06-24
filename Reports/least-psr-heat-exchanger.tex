@@ -14,9 +14,13 @@
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
 
-\usepackage{nomencl}
-\makenomenclature
-\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
+%\usepackage{nomencl}
+%\makenomenclature
+%\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
+\usepackage[symbols,nogroupskip]{glossaries}
+\makeglossaries
+\newglossaryentry{alpha}{type=symbols, name={$\alpha$}, description={Angle of attack (radians)}}
+\newglossaryentry{velocity}{type=symbols, name={$v$}, description={Velocity (m/s)}}
 
 %\usepackage{booktabs}
 \graphicspath{{images/}}
@@ -85,8 +89,10 @@
 %\begin{abstract}
 %\end{abstract}
 \section{Nomenclature}
-\nomenclature{$\alpha$}{Angle of attack}
-\printnomenclature
+%\nomenclature{$\alpha$}{Angle of attack}
+%\printnomenclature
+
+\printglossary[type=symbols, title={Nomenclature}]
 
 %\section{Introduction}
 % Introducing the project and its objectives
