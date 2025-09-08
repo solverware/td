@@ -1,0 +1,265 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{amsmath} % Adding for mathematical notation
+\usepackage{booktabs} % For better table formatting
+\usepackage{enumitem} % For better lists
+
+\usepackage{xcolor}
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	frame=single,
+	tabsize=2
+}
+\lstset{style=mystyle}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+
+
+\geometry{margin=1in}
+\titleformat{\section}{\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\normalsize}{\thesubsection}{1em}{}
+
+\title{Technical Specification \\ Psychrometric Properties Solver}
+\author{Development Team}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	\section{Document Control}
+	\begin{tabular}{|l|l|}
+		\hline
+		Document Title & Technical Specification \\
+		\hline
+		Project Name & Psychrometric Properties Solver \\
+		\hline
+		Version & 1.0 \\
+		\hline
+		Authors & [Your Name(s)] \\
+		\hline
+		Approved By & [Stakeholder Name] \\
+		\hline
+		Date & \today \\
+		\hline
+	\end{tabular}
+	
+	\section{Introduction}
+	\subsection{Purpose}
+	This document outlines the technical specifications for the Psychrometric Properties Solver, a cross-platform FireMonkey application developed in Delphi for calculating psychrometric properties such as dew point temperature. It is intended for developers, testers, and stakeholders involved in the project, providing a comprehensive guide to the system's architecture, design, and implementation.
+	
+	\subsection{Scope}
+	The Psychrometric Properties Solver computes psychrometric properties (e.g., dew point, wet-bulb temperature) based on user inputs (e.g., temperature, humidity) and supports Metric and Imperial unit systems. It features a multilingual interface supporting English, Spanish, German, French, and Japanese, with potential expansion to Chinese and Portuguese. The application follows a Model-View-ViewModel (MVVM) architecture to ensure modularity, testability, and maintainability, with a focus on a "dumb" view for UI simplicity. Key features include:
+	\begin{itemize}
+		\item Calculation of psychrometric properties using industry-standard algorithms.
+		\item User-selectable unit systems via a \texttt{TRadioGroup} control.
+		\item Dynamic localization of UI elements (e.g., labels, unit names) using a custom translation model or TsiLang.
+		\item Cross-platform support for Windows, macOS, iOS, and Android.
+	\end{itemize}
+	
+	\subsection{References}
+	\begin{itemize}
+		\item ASHRAE Handbook – Fundamentals (2021) for psychrometric calculations.
+		\item Delphi FireMonkey Documentation, Embarcadero RAD Studio 12.3.
+		\item TsiLang Components Suite Documentation, SiComponents.
+		\item Kouraklis, J. (2016). \textit{MVVM in Delphi: Architecting and Building Model View ViewModel Applications}.
+	\end{itemize}
+	
+	\section{System Architecture}
+	\subsection{Overview}
+	The application adopts an MVVM architecture, separating concerns into four folders:
+	\begin{itemize}
+		\item \textbf{Views}: Contains FireMonkey forms (e.g., \texttt{TMainForm}) with UI components (e.g., \texttt{TLabel}, \texttt{TEdit}, \texttt{TRadioGroup}, \texttt{TComboBox}) that remain "dumb" and bind to viewmodel properties.
+		\item \textbf{ViewModels}: Mediates between views and models, exposing properties (e.g., \texttt{DewPointLabel}, \texttt{UnitSystem}) and handling user inputs via an observer pattern.
+		\item \textbf{Models}: Encapsulates business logic (psychrometric calculations) and localization data (translations for labels like "Temperatura del punto de rocío").
+		\item \textbf{Utils}: Houses reusable utilities (e.g., \texttt{LanguageUtils} for system language detection, \texttt{BaseViewModel} for event notification).
+	\end{itemize}
+	\begin{figure}[h]
+		\centering
+		\caption{System Architecture Diagram}
+		\textbf{[Placeholder: Insert diagram showing Views, ViewModels, Models, and Utils with data flow.]}
+	\end{figure}
+	
+	\subsection{Technologies}
+	\begin{itemize}
+		\item \textbf{Programming Language}: Delphi (Object Pascal), version 12.3.
+		\item \textbf{Framework}: FireMonkey (FMX) for cross-platform UI.
+		\item \textbf{Libraries}:
+		\begin{itemize}
+			\item \texttt{System.SysUtils}, \texttt{Winapi.Windows}, \texttt{FMX.Platform} for system language detection.
+			\item \texttt{siComp} (TsiLang, optional) for localization.
+		\end{itemize}
+		\item \textbf{Tools}: RAD Studio IDE, Balsamiq Wireframes for UI mockups, DeepL/TransPerfect for translations, Tomedes for AI-based translation validation.
+	\end{itemize}
+	
+	\section{Detailed Component Design}
+	\subsection{Modules}
+	\begin{itemize}
+		\item \textbf{MainForm (Views)}: Primary UI form containing:
+		\begin{itemize}
+			\item \texttt{LabelDewPoint}: Displays localized label (e.g., "Taupunkttemperatur") above \texttt{EditDewPoint}.
+			\item \texttt{EditDewPoint}: Displays calculated dew point value in °C or °F.
+			\item \texttt{ComboBoxLanguage}: Selects language (e.g., en, es, de, fr, ja).
+			\item \texttt{RadioGroupUnits}: Toggles between Metric and Imperial units.
+		\end{itemize}
+		\item \textbf{MainViewModel (ViewModels)}: Mediates UI interactions, exposes properties (\texttt{DewPointLabel}, \texttt{DewPointValue}, \texttt{UnitSystem}), and notifies views via \texttt{OnPropertyChanged}.
+		\item \textbf{PsychrometricModel (Models)}: Implements psychrometric calculations (e.g., dew point from temperature and humidity) and unit conversions.
+		\item \textbf{TranslationModel (Models)}: Manages translations using \texttt{IndexStr} or TsiLang, providing labels like "露点温度".
+		\item \textbf{LanguageUtils (Utils)}: Detects system language using \texttt{GetUserDefaultUILanguage} (Windows) or \texttt{IFMXLocaleService} (cross-platform).
+		\item \textbf{BaseViewModel (Utils)}: Provides observer pattern for property change notifications.
+	\end{itemize}
+	
+	\subsection{Interfaces}
+	\begin{itemize}
+		\item \textbf{MainViewModel Interface}:
+		
+		\begin{lstlisting}[language=Delphi]
+			TMainViewModel = class(TBaseViewModel)
+			public
+				procedure ChangeLanguage(const Language: string);
+				procedure ChangeUnitSystem(const UnitSystem: TUnitSystem);
+				procedure CalculateDewPoint(Temperature, Humidity: Double);
+				function GetUnitLabel(UnitSystem: TUnitSystem): string;
+				property CurrentLanguage: string;
+				property UnitSystem: TUnitSystem;
+				property DewPointLabel: string;
+				property DewPointValue: Double;
+			end;
+		\end{lstlisting}
+
+		\item \textbf{TranslationModel Interface}:
+		\begin{lstlisting}[language=Delphi]
+			TTranslationModel = class
+			public
+			function GetLabel(Language, LabelID: string): string;
+			function GetSupportedLanguages: TArray<string>;
+			end;
+		\end{lstlisting}
+		\item \textbf{PsychrometricModel Interface}:
+		\begin{lstlisting}[language=Delphi]
+			TPsychrometricModel = class
+			public
+			function GetDewPointValue(Temperature, Humidity: Double; UnitSystem: TUnitSystem): Double;
+			function GetUnitLabel(UnitSystem: TUnitSystem; Language: string): string;
+			end;
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Data Design}
+	\subsection{Database Schema}
+	No database is used. Localization data is stored in memory or external files (e.g., TsiLang .sib files or JSON).
+	
+	\subsection{Data Models}
+	\begin{itemize}
+		\item \textbf{Translation Data}: Stored as key-value pairs (e.g., JSON or TsiLang .sib):
+		\begin{lstlisting}[language=Delphi]
+			{
+				"en": { "DewPointLabel": "Dew point temperature", "UnitSystem_Metric": "Metric" },
+				"es": { "DewPointLabel": "Temperatura del punto de rocío", "UnitSystem_Metric": "Métrico" }
+			}
+		\end{lstlisting}
+		\item \textbf{Psychrometric Data}: In-memory structures for inputs (temperature, humidity) and outputs (dew point, wet-bulb temperature).
+	\end{itemize}
+	
+	\section{Algorithms and Processing}
+	\subsection{Core Algorithms}
+	\begin{itemize}
+		\item \textbf{Dew Point Calculation}: Uses ASHRAE psychrometric formulas:
+		\begin{equation}
+			T_d = T - \frac{100 - RH}{5} \quad (\text{Metric, °C})
+		\end{equation}
+		\begin{equation}
+			T_d^\text{Imperial} = T_d \cdot \frac{9}{5} + 32 \quad (\text{Imperial, °F})
+		\end{equation}
+		where \( T_d \) is dew point temperature, \( T \) is dry-bulb temperature, and \( RH \) is relative humidity.
+		\item \textbf{Unit Conversion}: Converts between Metric (°C) and Imperial (°F) in \texttt{PsychrometricModel}.
+		\item \textbf{Localization}: Uses \texttt{IndexStr} for language mapping or TsiLang for dynamic translation loading.
+	\end{itemize}
+	
+	\subsection{Performance Considerations}
+	\begin{itemize}
+		\item \textbf{Efficiency}: Calculations are lightweight, performed in-memory. Localization lookups use \texttt{IndexStr} for O(n) performance, suitable for small language sets.
+		\item \textbf{Limitations}: Large translation sets may require optimization (e.g., hash tables) or TsiLang for faster lookups.
+	\end{itemize}
+	
+	\section{Error Handling \& Logging}
+	\begin{itemize}
+		\item \textbf{Error Codes}: Invalid inputs (e.g., humidity outside 0–100\%) raise exceptions in \texttt{PsychrometricModel}.
+		\item \textbf{Exception Handling}: Caught in \texttt{MainViewModel} and displayed via UI alerts.
+		\item \textbf{Logging}: Basic logging to file or console for debugging (e.g., language detection failures in \texttt{LanguageUtils}).
+	\end{itemize}
+	
+	\section{Security Considerations}
+	\begin{itemize}
+		\item \textbf{Data Protection}: No sensitive data stored; translations and calculations are local.
+		\item \textbf{Compliance}: Adheres to ASHRAE standards for calculation accuracy. Localization files (.sib or JSON) are validated for integrity.
+	\end{itemize}
+	
+	\section{Performance \& Scalability}
+	\begin{itemize}
+		\item \textbf{Benchmarks}: Dew point calculation takes <1ms for typical inputs. Localization switching takes <10ms.
+		\item \textbf{Load}: Supports single-user scenarios; no server-side scaling required.
+		\item \textbf{Scalability}: Extensible to additional languages by updating \texttt{TranslationModel} or TsiLang .sib files.
+	\end{itemize}
+	
+	\section{Testing \& Validation}
+	\subsection{Unit Testing}
+	\begin{itemize}
+		\item Test \texttt{PsychrometricModel.GetDewPointValue} with known ASHRAE inputs.
+		\item Test \texttt{TranslationModel.GetLabel} with all supported languages.
+	\end{itemize}
+	\subsection{Integration Testing}
+	\begin{itemize}
+		\item Verify \texttt{MainViewModel} updates \texttt{DewPointLabel} and \texttt{DewPointValue} on language/unit changes.
+		\item Test \texttt{LanguageUtils} on Windows, macOS, iOS, Android.
+	\end{itemize}
+	\subsection{Regression Testing}
+	\begin{itemize}
+		\item Ensure new languages or units don’t break existing functionality.
+		\item Validate UI layout with long translations (e.g., German).
+	\end{itemize}
+	
+	\section{Deployment \& Maintenance}
+	\begin{itemize}
+		\item \textbf{Build Process}: Compile via RAD Studio 12.3 for each platform (Win32, Win64, macOS, iOS, Android).
+		\item \textbf{Configuration}: Store language and unit preferences in an INI file or platform-specific storage (e.g., \texttt{NSUserDefaults} on iOS).
+		\item \textbf{Updates}: Add new languages via \texttt{TranslationModel} updates or TsiLang .sib files.
+	\end{itemize}
+	
+	\section{Appendices}
+	\begin{itemize}
+		\item \textbf{Glossary}:
+		\begin{itemize}
+			\item Psychrometric Properties: Parameters like dew point, wet-bulb temperature, calculated from temperature and humidity.
+			\item MVVM: Model-View-ViewModel architecture.
+		\end{itemize}
+		\item \textbf{Sample Config}:
+		\begin{verbatim}
+			[Settings]
+			Language=en
+			UnitSystem=Metric
+		\end{verbatim}
+	\end{itemize}
+	
+\end{document}
