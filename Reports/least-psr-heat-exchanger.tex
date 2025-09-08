@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
 \usepackage{amsmath}
@@ -14,55 +14,16 @@
 \usepackage[backend=biber,style=numeric,sorting=none]{biblatex}
 \addbibresource{references.bib}
 
-<<<<<<< .mine\usepackage(nomencl@article{ID,
-	author = {author},
-	title = {title},
-	journaltitle = {journaltitle},
-	date = {date},
-	OPTtranslator = {translator},
-	OPTannotator = {annotator},
-	OPTcommentator = {commentator},
-	OPTsubtitle = {subtitle},
-	OPTtitleaddon = {titleaddon},
-	OPTeditor = {editor},
-	OPTeditora = {editora},
-	OPTeditorb = {editorb},
-	OPTeditorc = {editorc},
-	OPTjournalsubtitle = {journalsubtitle},
-	OPTissuetitle = {issuetitle},
-	OPTissuesubtitle = {issuesubtitle},
-	OPTlanguage = {language},
-	OPToriglanguage = {origlanguage},
-	OPTseries = {series},
-	OPTvolume = {volume},
-	OPTnumber = {number},
-	OPTeid = {eid},
-	OPTissue = {issue},
-	OPTmonth = {month},
-	OPTpages = {pages},
-	OPTversion = {version},
-	OPTnote = {note},
-	OPTissn = {issn},
-	OPTaddendum = {addendum},
-	OPTpubstate = {pubstate},
-	OPTdoi = {doi},
-	OPTeprint = {eprint},
-	OPTeprintclass = {eprintclass},
-	OPTeprinttype = {eprinttype},
-	OPTurl = {url},
-	OPTurldate = {urldate},
-}
-)
-\makenomenclature
-\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
-=======%\usepackage{nomencl}
+%\makenomenclature
+%\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
+%\usepackage{nomencl}
 %\makenomenclature
 %\setlength{\nomitemsep}{-\parsep} % Optional: Adjusts spacing between entries
 \usepackage[symbols,nogroupskip]{glossaries}
 \makeglossaries
 \newglossaryentry{alpha}{type=symbols, name={$\alpha$}, description={Angle of attack (radians)}}
 \newglossaryentry{velocity}{type=symbols, name={$v$}, description={Velocity (m/s)}}
->>>>>>> .theirs
+%>>>>>>> .theirs
 %\usepackage{booktabs}
 \graphicspath{{images/}}
 \lstloadlanguages{C,C++,csh,Java}
@@ -439,18 +400,17 @@ There were four heat exchangers that were tested.
 \end{table}
 
 \subsection{Aerodyn Tests of Metal Core}
-The first heat exchanger tested was essentially a duplicate of the core that was tested by Aerodyn Engineering, Inc. in 2020-2021. Inasmuch as the testing took place during the COVID-19 pandemic, there were no Caterpillar personnel at the test facility and results of the tests were communicated electronically, mostly through Excel spreadsheets. The resulting data, basically F\&J data points had some anomalies and these have never been explained.
+The first heat exchanger, named the "Metal heat exchanger," was essentially a duplicate of a core that was tested by Aerodyn Engineering, Inc. in 2020-2021, albeit much smaller. Inasmuch as the testing took place during the COVID-19 pandemic, there were no Caterpillar personnel at the test facility and results of the tests were communicated electronically, mostly through Excel spreadsheets. The resulting data, basically F\&J data points had some anomalies and these have never been fully explained.
 
-Moreover, it was decided to take a fresh look at the data and do the analysis using the exact methodology used for the tests run recently at Caterpillar. One important item was the use of accurate physical properties using the physical property databases and estimation algorithms of the Compact CoreSolver web application. These routines were repurposed to use in Excel spreadsheets through the use of custom add-in functions. The spreadsheet of data provided by Aerodyn used a polynomial curve-fit equation which, as it turns out, grossly underestimates the heat capacity. The equation used by Aerodyn is
+Moreover, it was decided to take a fresh look at the data and do the analysis using the exact methodology used for the tests run recently at Caterpillar. One important item was the use of accurate physical properties using the physical property databases and estimation algorithms of the Compact CoreSolver web application. These routines were repurposed to use in Excel spreadsheets through the use of custom add-in functions. The spreadsheet of data provided by Aerodyn used a polynomial curve-fit equation which, as it turns out, grossly underestimates the heat capacity. The equation used by Aerodyn is this polynomial:
 
 $$ C_p = \num{-9.2e-15} \bar{T}^4 + \num{1.3e-12} \bar{T}^3 + \num{2.9e-8} \bar{T}^2 +\num{3.0e-6} \bar{T} +0.2393 $$
 
-No reference was given as to the source of the polynomial curve-fit. It turns out that heat capacity data generated from this equation match exactly to published data for dry air, except at the very highest temperatures where there is some deviation. Clearly, Aerodyn did not attempt to use precise properties in their analysis.
+No reference was given as to the source of the polynomial curve-fit. By reverse engineering, it turns out that heat capacity data generated from this equation exactly matches published data for dry air, except at the very highest temperatures where there is some deviation. Clearly, Aerodyn did not attempt to use precise properties in their analysis.
 
+The Aerodyn test used combusted natural gas as a heat transfer fluid on both sides of the heat exchanger. The combustor was designed by a Caterpillar consultant (D. White, personal communication, May 30, 2025) to be operated near stoichiometric conditions with some excess air as is customary. As far as we know, the fuel and air rates were not recorded but a reasonable assumption is to assume 10\% excess air. One of the Aerodyn tests (core "A") was conducted on March 23, 2020 at 9:23 a.m. and the ambient temperature (outdoors) was recorded as 39°F at 9:21 a.m., atmospheric pressure of 29.28-in Hg and a relative humidity of 86\%. These data were obtained from ~\parencite{wunderground2025a}. The test of Core "B" was conducted on June 10, 2020 where the ambient temperature was 80°F and the relative humidity was 86\%, obtained from ~\parencite{wunderground2025b}. Finally, a core "AA" was tested on October 23, 2020 which was effectively a double-size version of core A ~\parencite{wunderground2025c}.
 
-The Aerodyn test used combusted natural gas as a heat transfer fluid on both sides of the heat exchanger. The combustor was designed by a Caterpillar consultant (D. White, personal communication, May 30, 2025) to be operated near stoichiometric conditions with some excess air as is customary. As far as we know, the fuel and air rates were not recorded but a reasonable assumption is to assume 10\% excess air. One of the Aerodyn tests (core "A") was conducted on March 23, 2020 at 9:23 a.m. and the ambient temperature (outdoors) was recorded as 39°F at 9:21 a.m., atmospheric pressure of 29.28-in Hg and a relative humidity of 86\%. These data were obtained from ~\parencite{wunderground2025a}. The test of Core "B" was conducted on June 10, 2020 where the ambient temperature was 80°F and the relative humidity was 86\%, obtained from ~\parencite{wunderground2025b}.
-
-Two heat transfer fluids were created in the database using the calculated mole fractions of the constituent gases. These calculations involve calculating partial pressures of water and using the steam tables to determine the mole fraction of water in the gas. 
+Three heat transfer fluids were created in the database using calculated mole fractions of the constituent gases. These calculations involve calculating partial pressures of water and using the steam tables to determine the mole fraction of water in the gas. 
 	
 When the Aerodyn polynomial was used to generate heat capacity data, it matched perfectly with the heat capacity ($C_p$) of dry air, i.e., air with zero water content. Unfortunately, this is quite far from the actual water content of this sort of test for two reasons: 1) the air was not even close to dry air, especially the test done in June and 2) complete combustion of natural gas adds appreciable water to the gas as water is the main combustion product of natural gas (two moles of water and one mole of carbon dioxide). The heat capacity data is shown in Figure
  \ref{fig:aerodyn-cp} below which shows heat capacity generated from Aerodyn's curve-fit as well as data referenced by ~\parencite{fraas1965}. The curve fit matches the published data perfectly until the temperature exceeds 1200°F, which probably indicates they curve the data up to this temperature. The two custom fluids that were created based on the ambient conditions in Indianapolis on the testing days shows the significant contribution of water vapor from the humid air and from combustion products of natural gas.
@@ -645,6 +605,53 @@ One of the long-standing F\&J surfaces is known as "Surface 52" which is shown i
 \label{fig:surface52}
 \end{figure}
 
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{loglogaxis}[
+			xlabel={Reynolds Number (Re)},
+			ylabel={Colburn Modulus (J)},
+			axis y line*=left, % Primary y-axis on the left
+			grid=major,
+			%title={Friction and Colburn Factors vs. Reynolds Number},
+			legend pos=north west
+			]
+			% Plot F fromJF_data.dat
+			\addplot[
+			blue,
+			thick,
+			mark=*,
+			] table[] {core-a.txt};
+			\addlegendentry{J}
+		\end{loglogaxis}				
+	\end{tikzpicture}
+	\caption{J for Core A}
+	\label{fig:coreA}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{loglogaxis}[
+			xlabel={Reynolds Number (Re)},
+			ylabel={Colburn Modulus (J)},
+			axis y line*=left, % Primary y-axis on the left
+			grid=major,
+			%title={Friction and Colburn Factors vs. Reynolds Number},
+			legend pos=north west
+			]
+			% Plot F fromJF_data.dat
+			\addplot[
+			blue,
+			thick,
+			mark=*,
+			] table[] {core-b.txt};
+			\addlegendentry{J}
+		\end{loglogaxis}				
+	\end{tikzpicture}
+	\caption{J for Core B}
+	\label{fig:coreB}
+\end{figure}
 % Add bibliography at the end
 \newpage
 \subsection{PerfTest Console Application}
