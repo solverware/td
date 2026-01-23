@@ -1,0 +1,120 @@
+\PassOptionsToPackage{margin=1in}{geometry}
+\documentclass[twocolumn]{NobArticle}
+\runninghead{Kidney Yogurt}
+
+% === Packages for clean, modern look ===
+%\usepackage[letter,margin=1in]{geometry}          % Reasonable margins
+%\geometry{letterpaper, margin=1in}
+\usepackage{fontspec}                      % For better fonts (use XeLaTeX or LuaLaTeX)
+\setmainfont{Times New Roman}              % Or your favorite: Georgia, Calibri, etc.
+\usepackage{parskip}                       % Space between paragraphs instead of indent
+\usepackage{titlesec}                      % Nicer section titles
+\usepackage{xcolor}                        % Colors for emphasis
+\usepackage{hyperref}                      % Clickable links
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+\usepackage{booktabs}                      % Beautiful tables
+\usepackage{enumitem}                      % Custom lists
+\usepackage{graphicx}                      % Images (e.g. LTG photos)
+\usepackage{caption}                       % Better captions
+
+
+
+% === Section formatting (clean & modern) ===
+\titleformat{\section}
+{\large\bfseries\color{black!70!black}}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalsize\bfseries\color{black}}
+{\thesubsection}{1em}{}
+
+% === Light page background note (optional) ===
+\usepackage{background}
+\backgroundsetup{
+	scale=1,
+	angle=0,
+	opacity=0.07,
+	contents={Draft - Lily the Great Recovery Journal}
+}
+
+% === Title & Metadata ===
+% Title
+\title{Kidney Yogurt: How a Homemade Probiotic Turned My Cat's CKD Around}
+% Authors
+\author{Mike Stephenson, aka Lily the Great's Dad\textsuperscript{1}}
+% Affiliations
+\date{\textsuperscript{\textbf{1}}Solverware, San Diego, California}
+
+
+\begin{document}
+	
+	\maketitle
+	
+	\begin{abstract}
+		This is the story of how I used a homemade probiotic yogurt based on \textit{Bacillus coagulans} to dramatically improve my 18.5-year-old cat Lily the Great's chronic kidney disease (CKD) labs and vitality. This is not veterinary advice—always consult your vet before trying any supplement or diet change. N.B. - this is anecdotal data for one cat so results may vary.
+	\end{abstract}
+	
+	\section{Introduction}
+	Lily the Great (LTG) is an 18.5 year old calico cat born in May 2007 in El Centro, California. She relocated to sunny San Diego, in June of 2007 and choose two humans, Linda and Mike, who lived just down the street. Lily has been on a mostly good, sound raw food diet but her diet was augmented by some not-so-good kibble, which we believe led to her kidney disease, first diagnosed in 2021.
+	
+	LTG has been mostly on a raw diet but was fed kibble most of her adult life mainly for the convenience as it could be put in a dish and remain out all day with no waste. Because it was an expensive product and purchased at boutique pet stores, it was believed to be a high quality food. We were disabused of that belief once she was first diagnosed with kidney disease. We quickly educated ourselves that kibble is out.
+	
+	The conventional vet recommended diet for kidney issues emphasies
+	had advanced CKD with alarming lab numbers in early 2025...
+	
+	% === Your content here ===
+	\input{saddle-thrombus-in-cats}	
+	
+	\section{The Microbiome and Super Gut Yogurts}
+	The microbiome is the collection (or community) of all microorganisms—including bacteria, archaea, fungi, viruses, and sometimes other tiny eukaryotes—along with their genes and the environmental conditions of the habitat they occupy in a specific location, usually the human body. The human body hosts as many microbe cells as it does human cells and microbial genes outnumber human genes by as much as a factor of 100. 
+	
+	The microbiome plays huge roles in digestion, immune system training, vitamin production, protection against pathogens, metabolism, and even brain function via the gut-brain axis. When it's out of balance (dysbiosis), it can contribute to many diseases.
+	
+	Cats also have a microbiome.
+	
+	\section{The Gut-Kidney Axis}
+	Chronic kidney disease (CKD) is very common in older cats (affecting up to ~30-50\% over age 10-15), and the gut-kidney axis is an emerging area of interest. Gut dysbiosis (imbalanced microbiota) can contribute to uremic toxin buildup (e.g., from gut bacteria metabolizing proteins into harmful compounds like urea/ammonia/indoxyl sulfate), worsening kidney burden and inflammation.
+		
+	\input{saddle-yogurt}
+		
+	\section{The Science Behind Kidney Yogurt}
+	B. coagulans is a spore-forming probiotic...
+	\input{recipe-kidney-yogurt}
+	
+	The book Super Gut, by reknowned cardiologist Dr. William Davis describes various homemade yogurt concoctions are made by a long fermentation process, usually in a dairy substance such as organic half-and-half. A distinguishing point of this process is the long fermentation time on the order of 36 hours. The fermentation time is designed to produce high colony forming units (CFUs) of whatever probiotic is being fermented. Such probiotics reproduce asexually so double based on a time factor, which is also a function of temperature and the fermentation environment.
+	
+	The microbe that has perhaps gotten the most attention is L. Reuteri as it appears to be a keystone microbe that has mostly been lost in modern society due to overuse of antibiotics. L. Reuteri has a double time of three hours which equates to 12 doublings in a 36-hour fermentation cycle.
+	 
+	Subtilis doubles every 20-25 minutes at 37°C. 
+	
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{ll}
+			\toprule
+			\textbf{Ingredient} & \textbf{Amount} \\
+			\midrule
+			Organic ultra-pasteurized half-and-half & 1 quart \\
+			B. coagulans GBI-30,6086 capsules & 1--2 \\
+			Inulin powder (prebiotic) & 2 tbsp \\
+			\bottomrule
+		\end{tabular}
+		\caption{Ingredients for 1 quart batch}
+		\label{tab:recipe-ingredients}
+	\end{table}
+	
+	Fermentation steps:
+	\begin{enumerate}[leftmargin=*]
+		\item Mix slurry...
+		\item Heat and cool...
+		\item Ferment at 106°F for 36 hours...
+	\end{enumerate}
+	
+	\section{Lily's Journey \& Lab Results}
+	Before yogurt (April 2025): Creatinine 9.8, BUN >130...  
+	After 7 weeks: Creatinine 6.7...
+	
+	\section{Conclusion}
+	If your cat has CKD, discuss probiotics with your vet...
+	
+	\printbibliography
+	
+\end{document}
