@@ -1,0 +1,68 @@
+# === Core LaTeX auxiliary files ===
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# === Bibliography / indexing ===
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+
+# === Glossaries ===
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+
+# === Nomenclature ===
+*.nlo
+*.nls
+
+# === TikZ / externalization ===
+*.tikz
+*.tikzaux
+
+# === Latexmk ===
+*.run.xml
+
+# === PDF build artifacts ===
+*.dvi
+*.xdv
+
+# === Editor-specific ===
+
+# TeXstudio
+*.txsuser
+*.txsprofile
+
+# TeXworks
+*.synctex.gz(busy)
+
+# === OS junk ===
+.DS_Store
+Thumbs.db
+
+# === Temporary / backup files ===
+*~
+*.bak
+*.tmp
+
+# === Build directories (if you use them) ===
+/build/
+/out/
+/dist/
+
+# === Optional: ignore PDFs (choose your preference) ===
+# Uncomment if you DON'T want PDFs in Git
+# *.pdf
