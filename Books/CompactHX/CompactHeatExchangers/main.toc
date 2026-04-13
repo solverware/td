@@ -1,4 +1,0 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {section}{\numberline {1.1}Estimating Power Losses}{1}{}%
-\contentsline {section}{\numberline {1.2}Friction Power Expended}{1}{}%
-\contentsline {chapter}{\numberline {2}The Second Chapter}{3}{}%
