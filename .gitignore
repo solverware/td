@@ -1,3 +1,5 @@
+# === Remove SVN ===
+.svn/
 # === Core LaTeX auxiliary files ===
 *.aux
 *.log
